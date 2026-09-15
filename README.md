@@ -23,8 +23,9 @@ to match.
 ## Keeping the policy true
 
 The policy describes what the extension actually does in version 0.19: everything
-runs locally, and the only outbound traffic is to `api.anthropic.com` using the
-student's own API key. **If that changes — in particular if model calls are routed
+runs locally; AP Classroom is read by a content script that leaves College Board's
+token on College Board's site; and the only outbound traffic is to
+`api.anthropic.com` using the student's own API key. **If that changes — in particular if model calls are routed
 through a server so one shared key can be metered — this page has to be updated
 before that version ships**, because it would mean questions passing through a
 server we operate.

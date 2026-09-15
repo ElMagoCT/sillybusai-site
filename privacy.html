@@ -36,6 +36,8 @@ already has:</p>
   <li><b>Documents your teachers have shared with you</b> on Google Docs, such as
       syllabi and weekly plans, so that work assigned in a document shows up
       alongside work assigned in Canvas.</li>
+  <li><b>AP Classroom</b>, if you use it — your AP assignments and progress checks,
+      read while you have that site open. See below.</li>
 </ul>
 <p>It reads these as you, with the browser session you already have. It never asks
 for or stores your school password, and it never signs in on your behalf. If a
@@ -49,6 +51,18 @@ sync with, and no copy held anywhere else.</p>
 assignments, its cache of the documents it has read, and its record of what you
 have ticked off) and to <code>chrome.storage.local</code> (your settings — your AI
 key and your class schedule feed address).</p>
+
+<h2>AP Classroom</h2>
+<p>AP Classroom does not accept the ordinary browser sign-in the extension uses
+elsewhere: it authorises each request with a token held by the page itself. So the
+extension reads your AP assignments a different way — a small script runs on
+<code>apclassroom.collegeboard.org</code> while you have that page open, collects
+the assignments listed there, and passes the extension the title, subject, due date,
+status and link for each one.</p>
+<p>That token stays on College Board's own site. It is never copied, stored, or
+handed to any other part of the extension, and nothing about your AP Classroom
+account leaves your computer. The script runs only on that domain and does nothing
+on any other page.</p>
 
 <h2>The AI assistant</h2>
 <p>The assistant is <b>off unless you turn it on</b> by pasting your own Anthropic
@@ -83,6 +97,9 @@ data is ever sent anywhere.</p>
   <tr><td><code>storage</code></td>
       <td>To save your settings — your AI key and your class schedule address — so
           you do not re-enter them on every visit.</td></tr>
+  <tr><td><code>scripting</code></td>
+      <td>To run the small reader script on AP Classroom described above. It is used
+          for that page and no other.</td></tr>
   <tr><td><code>*.instructure.com</code></td>
       <td>To read your courses, assignments and grades from Canvas. Canvas gives
           each school its own address, so the exact one is not known in advance.</td></tr>
@@ -91,6 +108,10 @@ data is ever sent anywhere.</p>
   <tr><td><code>docs.google.com</code></td>
       <td>To read the syllabus and planning documents your teachers have already
           shared with you, so work assigned in a document is not missed.</td></tr>
+  <tr><td><code>apclassroom.collegeboard.org</code><br>
+          <code>apc-api-production.collegeboard.org</code></td>
+      <td>To read your AP assignments and progress checks from AP Classroom, as
+          described above.</td></tr>
   <tr><td><code>api.anthropic.com</code></td>
       <td>To send your questions to the AI assistant, only when you have added your
           own API key.</td></tr>
