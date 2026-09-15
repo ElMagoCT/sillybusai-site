@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Silly Bus AI</title>
+<meta name="description" content="How the Silly Bus AI Chrome extension handles your school data. Short version: it stays on your computer.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header class="site">
+  <div class="brand"><b>Silly Bus AI</b> <span>Chrome extension</span></div>
+</header>
+
+<h1>Privacy Policy</h1>
+<p class="lede">How this extension handles your school data.</p>
+<p class="updated">Last updated 14 September 2026 · applies to version 0.19 and later</p>
+
+<div class="card">
+  <p><b>The short version.</b> Silly Bus AI runs entirely inside your own copy of
+  Chrome. Your assignments, grades and schedule are stored on your computer and
+  are never sent to us — we do not run a server that receives them, and we have
+  no way to see them. The only thing that ever leaves your machine is what you
+  personally ask the AI assistant, and that goes directly to Anthropic under an
+  API key you supply yourself.</p>
+</div>
+
+<h2>What the extension reads</h2>
+<p>When you press Refresh, the extension reads, using the sign-ins your Chrome
+already has:</p>
+<ul>
+  <li><b>Your school's Canvas</b> — your courses, assignments, due dates and grades.</li>
+  <li><b>Your school's Veracross portal</b> — your class schedule and grades.</li>
+  <li><b>Documents your teachers have shared with you</b> on Google Docs, such as
+      syllabi and weekly plans, so that work assigned in a document shows up
+      alongside work assigned in Canvas.</li>
+</ul>
+<p>It reads these as you, with the browser session you already have. It never asks
+for or stores your school password, and it never signs in on your behalf. If a
+session expires, the extension tells you to sign in yourself, in your own browser.</p>
+
+<h2>Where that information is stored</h2>
+<p>On your computer, in the storage that belongs to this extension inside your
+Chrome profile. Nothing is uploaded. There is no account to create, no server to
+sync with, and no copy held anywhere else.</p>
+<p>Concretely, the extension writes to Chrome's IndexedDB storage (its database of
+assignments, its cache of the documents it has read, and its record of what you
+have ticked off) and to <code>chrome.storage.local</code> (your settings — your AI
+key and your class schedule feed address).</p>
+
+<h2>The AI assistant</h2>
+<p>The assistant is <b>off unless you turn it on</b> by pasting your own Anthropic
+API key into the extension's Options page. If you never add a key, no part of your
+data is ever sent anywhere.</p>
+<p>If you do add a key:</p>
+<ul>
+  <li>The key is stored on your computer in <code>chrome.storage.local</code>. It
+      is never sent anywhere except to Anthropic, and never to us.</li>
+  <li>When you ask the assistant a question, your question and the relevant parts
+      of your assignments — the ones needed to answer it — are sent to Anthropic's
+      API at <code>api.anthropic.com</code>, billed to your own Anthropic account.
+      Their handling of that data is covered by
+      <a href="https://www.anthropic.com/legal/privacy">Anthropic's privacy policy</a>.</li>
+  <li>Many questions are answered by the extension itself, from data already on
+      your machine, and those never reach the model at all.</li>
+</ul>
+
+<h2>What we do not do</h2>
+<ul>
+  <li>No analytics, telemetry, crash reporting or usage tracking of any kind.</li>
+  <li>No advertising, and no ad networks or trackers on this page.</li>
+  <li>No selling, renting or sharing of your data — there is nothing to sell,
+      because we never receive it.</li>
+  <li>No use of your school data to train any AI model.</li>
+  <li>No accounts, sign-ups or email collection to use the extension.</li>
+</ul>
+
+<h2>Why the extension asks for each permission</h2>
+<table>
+  <tr><th>Permission</th><th>What it is for</th></tr>
+  <tr><td><code>storage</code></td>
+      <td>To save your settings — your AI key and your class schedule address — so
+          you do not re-enter them on every visit.</td></tr>
+  <tr><td><code>*.instructure.com</code></td>
+      <td>To read your courses, assignments and grades from Canvas. Canvas gives
+          each school its own address, so the exact one is not known in advance.</td></tr>
+  <tr><td><code>*.veracross.com</code></td>
+      <td>To read your class schedule and grades from your school's Veracross portal.</td></tr>
+  <tr><td><code>docs.google.com</code></td>
+      <td>To read the syllabus and planning documents your teachers have already
+          shared with you, so work assigned in a document is not missed.</td></tr>
+  <tr><td><code>api.anthropic.com</code></td>
+      <td>To send your questions to the AI assistant, only when you have added your
+          own API key.</td></tr>
+</table>
+
+<h2>Deleting your data</h2>
+<p>Removing the extension from Chrome deletes everything it has stored, including
+your settings and your API key. There is no separate deletion request to make,
+because we hold no copy of anything.</p>
+
+<h2>Students and young people</h2>
+<p>This extension is built for students and shows a student their own schoolwork on
+their own computer. It collects no personal information, builds no profile of
+anyone, and sends nothing to us, so there is nothing for us to disclose about a
+user of any age.</p>
+
+<h2>Changes to this policy</h2>
+<p>If the extension's handling of data changes — in particular if a future version
+sends anything to a server we operate — this page will be updated before that
+version is published, and the date at the top will change to say so.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy, or about anything the extension does, can be raised
+at <a href="https://github.com/ElMagoCT/sillybusai-site/issues">github.com/ElMagoCT/sillybusai-site/issues</a>.</p>
+
+<footer class="site">
+  <a href="./">Silly Bus AI</a> · Privacy Policy · last updated 14 September 2026
+</footer>
+
+</div>
+</body>
+</html>
