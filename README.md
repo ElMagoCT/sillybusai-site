@@ -14,6 +14,7 @@ Pages. Plain HTML and CSS — no build step, no dependencies.
 | `assets/img/icon-square.svg` | Same mark with equal top/bottom padding — the source for every favicon/app-icon PNG in `assets/img/`. Regenerate with `qlmanage -t -s 1024` then `sips -z`. |
 | `assets/img/og-1200x630.png` | Social-share image, rendered from `webstore/promo/src/og-1200x630.html`. |
 | `webstore/` | The complete Chrome Web Store submission kit — see its own README. |
+| `releases.json` | Feeds the version badge in the nav and the "What's new" list. **Generated** — after each app release run `python3 tools/sync-release.py` (reads `~/sillybus-ai/VERSION` and the `## x.y.z.w — date — title` headings of its `CHANGELOG.md`) and commit the result. The app repo is private, so the page cannot read it live. |
 
 The bus artwork is inlined once in `index.html` as SVG `<defs>` (`#bus-full`, `#bus-body`,
 `#sparkle-shape`) and reused with `<use>`, so the logo, the stage bus, the route bus and

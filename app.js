@@ -123,6 +123,18 @@
     });
   }
 
+  /* ---------- version tracker ---------- */
+  fetch("releases.json", { cache: "no-cache" }).then((r) => r.json()).then((rel) => {
+    const fmt = (d) => new Date(d + "T12:00:00").toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
+    const badge = $("#version .vtext");
+    if (badge) badge.textContent = `v${rel.version}`;
+    const cur = $("#changes-current");
+    if (cur && rel.released) cur.textContent = `current v${rel.version} · ${fmt(rel.released)}`;
+    const list = $("#changes-list");
+    if (list) list.innerHTML = rel.history.slice(0, 6).map((e) =>
+      `<li><span class="v">${e.version}</span><span class="d">${fmt(e.date)}</span><span class="t">${e.title.replace(/</g, "&lt;")}</span></li>`).join("");
+  }).catch(() => {});
+
   /* ---------- sparkle burst ---------- */
   const canvas = $("#burst");
   const ctx = canvas.getContext("2d");

@@ -53,7 +53,9 @@
     <a class="brand" href="./"><img src="assets/img/logo.svg" alt="" width="46" height="32">Silly Bus AI</a>
     <div class="nav-links">
       <a class="hide-sm" href="#how">How it works</a>
-      <a href="privacy.html">Privacy</a>
+      <a class="hide-sm" href="#plans">Plans</a>
+      <a class="hide-xs" href="privacy.html">Privacy</a>
+      <a class="version" id="version" href="#changes" title="What's new"><span class="vdot"></span><span class="vtext">Changelog</span></a>
       <a class="btn btn-ghost" href="#pilot">Pilot</a>
     </div>
   </nav>
@@ -69,6 +71,7 @@
       <a class="btn btn-primary" data-burst href="https://github.com/ElMagoCT/sillybusai-site/issues/new?title=Pilot%20access%20request&labels=pilot&body=School%3A%0ACanvas%20URL%3A%0AGrade%2FYear%3A%0A">Join the pilot <span class="arrow">→</span></a>
       <a class="btn btn-ghost" href="#stage">See it work <span class="arrow">↓</span></a>
     </div>
+    <p class="free-now rise"><span class="tag">Free right now</span> The pilot runs on your own Anthropic key. Plans come with the public launch.</p>
   </section>
 
   <section class="stage-wrap" id="stage">
@@ -114,7 +117,7 @@
           </svg>
         </div>
         <h3>Stays on your computer.</h3>
-        <p>Nothing uploaded. No account.</p>
+        <p>Your schoolwork never leaves.</p>
       </article>
       <article class="reason" tabindex="0">
         <div class="glyph">
@@ -126,7 +129,7 @@
           </svg>
         </div>
         <h3>AI only when you ask.</h3>
-        <p>Your own key. Off by default.</p>
+        <p>Off by default. Your own key during the pilot.</p>
       </article>
     </div>
   </section>
@@ -143,6 +146,49 @@
         <li><div class="pin"></div><b>Refresh</b><span>Every class, ranked by what's due. Ask the AI if you want help deciding.</span></li>
       </ol>
     </div>
+  </section>
+
+  <section class="plans" id="plans">
+    <h2 class="reveal">Free now. Cheap later.</h2>
+    <p class="plans-lede reveal">Everything is free during the pilot. When Silly Bus AI launches publicly, you'll make an account and pick a plan:</p>
+    <div class="plan-grid reveal-stagger">
+      <article class="plan">
+        <div class="plan-name">Free</div>
+        <div class="plan-price">$0</div>
+        <ul>
+          <li><b>50</b> refreshes a month</li>
+          <li>Every source, one board</li>
+          <li>Chat answers from your board</li>
+        </ul>
+      </article>
+      <article class="plan featured">
+        <div class="plan-name">Plus</div>
+        <div class="plan-price">$5<span>/mo</span></div>
+        <ul>
+          <li><b>150</b> refreshes a month</li>
+          <li><b>25</b> Accelerates — a reading turned into a study guide</li>
+          <li>AI included, no key needed</li>
+        </ul>
+      </article>
+      <article class="plan">
+        <div class="plan-name">Unlimited</div>
+        <div class="plan-price">$10<span>/mo</span></div>
+        <ul>
+          <li><b>Unlimited</b> refreshes</li>
+          <li><b>Unlimited</b> Accelerates</li>
+          <li>AI included, no key needed</li>
+        </ul>
+      </article>
+    </div>
+    <p class="plans-note reveal">A <b>refresh</b> re-reads every source and rebuilds your board. Pilot users keep bringing their own key until launch — nothing changes for you today.</p>
+  </section>
+
+  <section class="changes" id="changes">
+    <div class="changes-head reveal">
+      <h2>What's new</h2>
+      <span class="changes-current" id="changes-current"></span>
+    </div>
+    <ol class="changes-list reveal-stagger" id="changes-list"></ol>
   </section>
 
   <section class="pilot reveal" id="pilot">

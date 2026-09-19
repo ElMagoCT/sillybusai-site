@@ -49,6 +49,10 @@ Anthropic, billed to your own account.
 BUILT BY A STUDENT
 Made by a high school senior who uses it on his own course load every day.
 
+FREE DURING THE PILOT
+This version is free. Plans (a free tier plus $5 and $10 monthly options
+with the AI included) arrive with the public launch — see sillybusai.com.
+
 Privacy policy: https://sillybusai.com/privacy.html
 ```
 

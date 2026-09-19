@@ -1,0 +1,46 @@
+{
+  "version": "0.20.0.0",
+  "released": "2026-09-17",
+  "history": [
+    {
+      "version": "0.20.0.0",
+      "date": "2026-09-17",
+      "title": "Hearth · Studio: the board rebuilt"
+    },
+    {
+      "version": "0.19.4.0",
+      "date": "2026-09-14",
+      "title": "Which Progress Check \"APCR\" means, and a chat history"
+    },
+    {
+      "version": "0.19.3.0",
+      "date": "2026-09-14",
+      "title": "AP Classroom, working chat, the doc homework back"
+    },
+    {
+      "version": "0.19.2.0",
+      "date": "2026-09-14",
+      "title": "Fit for the Chrome Web Store"
+    },
+    {
+      "version": "0.19.1.0",
+      "date": "2026-09-14",
+      "title": "Move in from the Mac app"
+    },
+    {
+      "version": "0.19.0.0",
+      "date": "2026-09-14",
+      "title": "Silly Bus AI"
+    },
+    {
+      "version": "0.18.20.0",
+      "date": "2026-09-11",
+      "title": "Six bugs from the last four days, and no download for the extension"
+    },
+    {
+      "version": "0.18.19.0",
+      "date": "2026-09-10",
+      "title": "A Chrome extension, and one page to get both from"
+    }
+  ]
+}
