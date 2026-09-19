@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500&display=swap");
+* { box-sizing: border-box; margin: 0; }
+html, body { height: 100%; }
+body.tile {
+  overflow: hidden; position: relative; color: #1a1a17;
+  background: linear-gradient(135deg, #8a8a8a 0%, #b58f3a 55%, #e8a317 100%);
+  font-family: "Inter", -apple-system, sans-serif; -webkit-font-smoothing: antialiased;
+}
+h1 { font-family: "Fraunces", Georgia, serif; font-weight: 600; letter-spacing: -.03em; line-height: 1; }
+p { line-height: 1.4; opacity: .82; }
+.bus { display: block; }
+
+/* 440×280 */
+.small { width: 440px; height: 280px; display: flex; align-items: center; gap: 22px; padding: 0 30px; }
+.small .bus { width: 176px; flex: none; }
+.small h1 { font-size: 36px; margin-bottom: 8px; white-space: nowrap; }
+.small p { font-size: 15px; }
+
+/* 1400×560 */
+.marquee { width: 1400px; height: 560px; display: flex; align-items: center; }
+.marquee .text { padding: 0 0 0 96px; width: 620px; flex: none; }
+.marquee .bus { width: 150px; margin-bottom: 34px; }
+.marquee h1 { font-size: 84px; margin-bottom: 22px; }
+.marquee p { font-size: 20px; max-width: 460px; }
+.marquee .shot { position: absolute; left: 700px; top: 72px; width: 900px; border-radius: 18px; overflow: hidden; box-shadow: 0 40px 80px -30px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.25); }
+.shot img { display: block; width: 100%; }
+
+/* 920×680 */
+.large { width: 920px; height: 680px; }
+.large .text { padding: 64px 72px 0; }
+.large .bus { width: 120px; margin-bottom: 26px; }
+.large h1 { font-size: 60px; margin-bottom: 14px; }
+.large p { font-size: 19px; }
+.large .shot { position: absolute; left: 72px; top: 330px; width: 900px; border-radius: 18px; overflow: hidden; box-shadow: 0 40px 80px -30px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.25); }

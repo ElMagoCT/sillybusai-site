@@ -3,116 +3,163 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Silly Bus AI — every assignment, one board</title>
-<meta name="description" content="Silly Bus AI reads your Canvas, Veracross, teacher docs and AP Classroom into one prioritized homework board, inside the Chrome you already use. Runs on your computer — nothing is uploaded.">
+<title>Silly Bus AI — every class, one board</title>
+<meta name="description" content="Silly Bus AI reads Canvas, teacher docs, AP Classroom and more into one prioritized board, inside your Chrome. Nothing is uploaded.">
+<meta property="og:title" content="Silly Bus AI — every class, one board">
+<meta property="og:description" content="Every assignment from every source, in one place, on your own computer.">
+<meta property="og:image" content="https://elmagoct.github.io/sillybusai-site/assets/img/og-1200x630.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="assets/img/icon-square.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icon-32.png">
 <link rel="apple-touch-icon" href="assets/img/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="wrap wide">
 
-<header class="site">
-  <a class="brand" href="./">
-    <img src="assets/img/icon-square.svg" alt="">
-    <b>Silly Bus AI</b> <span>Chrome extension</span>
-  </a>
-  <nav class="site">
-    <a href="#features">Features</a>
-    <a href="#pilot">Pilot</a>
-    <a href="privacy.html">Privacy</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="bus-grad" x1="0" y1="0" x2="1" y2="0" gradientTransform="rotate(135 0.5 0.5)">
+      <stop offset="0" stop-color="#878787"/><stop offset="1" stop-color="#E8A317"/>
+    </linearGradient>
+    <mask id="bus-mask" maskUnits="userSpaceOnUse" x="-60" y="-60" width="280" height="260">
+      <rect x="-60" y="-60" width="280" height="260" fill="#fff"/>
+      <path d="M49.7 12.5L55.7 12.5L49.3 73L43.3 73Z" fill="#000"/>
+      <path d="M14 21V53M14 21H25A8 8 0 0 1 25 37H14M14 37H27A8 8 0 0 1 27 53H14" fill="none" stroke="#000" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="24.8" cy="71.5" r="13" fill="#000"/><circle cx="86" cy="71.5" r="13" fill="#000"/>
+      <use href="#sparkle-shape" fill="#000"/>
+    </mask>
+    <path id="sparkle-shape" d="M68.7 21.48Q70.98 28.72 75.93 31Q70.98 33.28 68.7 40.52Q66.42 33.28 61.48 31Q66.42 28.72 68.7 21.48Z"/>
+    <g id="bus-body">
+      <g mask="url(#bus-mask)">
+        <path d="M4 57.5V27a13 13 0 0 1 13 -13H73a10 10 0 0 1 10 10V36H93.5a10.5 10.5 0 0 1 10.5 10.5V57.5a6 6 0 0 1 -6 6H10a6 6 0 0 1 -6 -6Z" fill="#1A1A17"/>
+        <rect x="2" y="61.5" width="104" height="10" rx="5" fill="#1A1A17"/>
+      </g>
+      <path fill-rule="evenodd" fill="#212121" d="M14.3 72.5a10.5 10.5 0 1 0 21 0a10.5 10.5 0 1 0 -21 0ZM21.2 72.5a3.6 3.6 0 1 0 7.1 0a3.6 3.6 0 1 0 -7.1 0Z"/>
+      <path fill-rule="evenodd" fill="#212121" d="M75.5 72.5a10.5 10.5 0 1 0 21 0a10.5 10.5 0 1 0 -21 0ZM82.4 72.5a3.6 3.6 0 1 0 7.1 0a3.6 3.6 0 1 0 -7.1 0Z"/>
+    </g>
+    <g id="bus-full">
+      <rect x="-3" y="9" width="114" height="79" fill="url(#bus-grad)"/>
+      <use href="#bus-body"/>
+    </g>
+  </defs>
+</svg>
+<canvas id="burst" aria-hidden="true"></canvas>
+
+<div class="wrap">
+  <nav class="nav">
+    <a class="brand" href="./"><img src="assets/img/logo.svg" alt="" width="46" height="32">Silly Bus AI</a>
+    <div class="nav-links">
+      <a class="hide-sm" href="#how">How it works</a>
+      <a href="privacy.html">Privacy</a>
+      <a class="btn btn-ghost" href="#pilot">Pilot</a>
+    </div>
   </nav>
-</header>
 
-<section class="hero">
-  <div class="hero-badge"><img src="assets/img/icon-square.svg" alt="Silly Bus AI logo"></div>
-  <h1>Every assignment, every class, one board.</h1>
-  <p class="lede">Silly Bus AI reads your Canvas, Veracross, the docs your teachers
-  share, and AP Classroom — and turns them into a single prioritized board of
-  what's actually due, inside the Chrome you already use.</p>
-  <div class="cta-row">
-    <a class="btn btn-primary" href="https://github.com/ElMagoCT/sillybusai-site/issues/new?title=Pilot%20access%20request&labels=pilot&body=School%3A%0ACanvas%20URL%3A%0AGrade%2FYear%3A%0A">Request pilot access</a>
-    <a class="btn btn-secondary" href="#features">See how it works</a>
-  </div>
-  <span class="pill">🚧 Chrome Web Store listing in progress — the extension currently installs from source during the pilot</span>
-</section>
+  <section class="hero">
+    <div class="hero-mark" id="hero-mark" title="Click me" role="img" aria-label="Silly Bus AI logo">
+      <svg viewBox="-3 9 114 79"><use href="#bus-full"/><use class="twinkle" href="#sparkle-shape" fill="#E8A317" opacity=".9"/></svg>
+    </div>
+    <div class="road" aria-hidden="true"></div>
+    <h1 class="rise">Every class.<br>One <span class="accent">board.</span></h1>
+    <p class="lede rise">Canvas, teacher docs, AP Classroom and more — read into one place, inside the Chrome you already use.</p>
+    <div class="cta-row rise">
+      <a class="btn btn-primary" data-burst href="https://github.com/ElMagoCT/sillybusai-site/issues/new?title=Pilot%20access%20request&labels=pilot&body=School%3A%0ACanvas%20URL%3A%0AGrade%2FYear%3A%0A">Join the pilot <span class="arrow">→</span></a>
+      <a class="btn btn-ghost" href="#stage">See it work <span class="arrow">↓</span></a>
+    </div>
+  </section>
 
-<section id="features">
-  <h2>What it actually does</h2>
-  <div class="grid">
-    <div class="card">
-      <div class="icon-tile">🗂️</div>
-      <h3>One board, every source</h3>
-      <p>Canvas, your school's Veracross portal, syllabi and plans your teachers
-      share as Google Docs, AP Classroom progress checks, and Albert.io practice
-      sets — merged by due date instead of five separate tabs.</p>
+  <section class="stage-wrap" id="stage">
+    <div class="stage" id="convergence" aria-label="Assignments from five sources gathering into one board">
+      <div class="chip" style="--c:#e11d48"><span class="dot"></span><span class="t">Federalist 10 &amp; 51 — reading</span><span class="src">Canvas</span></div>
+      <div class="chip" style="--c:#7c3aed"><span class="dot"></span><span class="t">Lab report — limiting reagent</span><span class="src">Google Doc</span></div>
+      <div class="chip" style="--c:#2563eb"><span class="dot"></span><span class="t">Unit 1 FRQ practice</span><span class="src">AP Classroom</span></div>
+      <div class="chip" style="--c:#0891b2"><span class="dot"></span><span class="t">Examen — pretérito</span><span class="src">Veracross</span></div>
+      <div class="chip" style="--c:#16a34a"><span class="dot"></span><span class="t">Stoichiometry set 3</span><span class="src">Albert.io</span></div>
+      <div class="board" aria-hidden="true">
+        <div class="board-head"><b>Tonight</b><span>5 open</span></div>
+        <div class="slot"></div><div class="slot"></div><div class="slot"></div><div class="slot"></div><div class="slot"></div>
+      </div>
+      <div class="stage-bus" aria-hidden="true"><svg viewBox="-3 9 114 79"><use href="#bus-full"/></svg></div>
+      <button class="replay" type="button" aria-label="Replay">↻</button>
     </div>
-    <div class="card">
-      <div class="icon-tile">🔒</div>
-      <h3>Runs on your computer</h3>
-      <p>It's a Chrome extension, not a service. Your assignments and grades are
-      stored in your own browser's storage. Nothing is uploaded, and there's no
-      account required to use it.</p>
-    </div>
-    <div class="card">
-      <div class="icon-tile">✨</div>
-      <h3>An AI assistant, if you want one</h3>
-      <p>Ask it what to work on first, or what a rubric means. It's off until you
-      add your own Anthropic API key, and only what you ask goes to Anthropic —
-      billed to your account, not ours.</p>
-    </div>
-    <div class="card">
-      <div class="icon-tile">🎓</div>
-      <h3>Honest about what it can't see</h3>
-      <p>It reads with the sign-ins your Chrome already has, and says so plainly
-      when a source can't be reached instead of guessing. AP Classroom and
-      Albert.io questions are never read — only what's assigned and when it's due.</p>
-    </div>
-    <div class="card">
-      <div class="icon-tile">🚌</div>
-      <h3>Built by a student, for students</h3>
-      <p>Made by a high school senior who uses it on his own course load every
-      day — not a school-vendor product built from a spec sheet.</p>
-    </div>
-    <div class="card">
-      <div class="icon-tile">🏫</div>
-      <h3>Works beyond one school</h3>
-      <p>Built first for Canvas at Brophy, extending to any Canvas school. If
-      your school runs Canvas, it's worth trying.</p>
-    </div>
-  </div>
-</section>
+    <p class="stage-caption reveal">Five places your homework hides. <b>One place it shows up.</b></p>
+  </section>
 
-<section>
-  <h2>How it works</h2>
-  <ol class="steps">
-    <li><div><b>Install the extension.</b> <span>Currently shared as an unpacked
-    build during the pilot; a Chrome Web Store listing is on the way.</span></div></li>
-    <li><div><b>Point it at your school.</b> <span>Sign in to Canvas (and
-    Veracross or AP Classroom, if you use them) the normal way — the extension
-    reads with the session you already have.</span></div></li>
-    <li><div><b>Get one board.</b> <span>Every class, ranked by what's actually
-    due, refreshed on demand. Turn on the AI assistant if you want help
-    prioritizing or understanding an assignment.</span></div></li>
-  </ol>
-</section>
+  <section class="reasons">
+    <div class="reasons-grid reveal-stagger">
+      <article class="reason">
+        <div class="glyph">
+          <svg class="g-bars" viewBox="0 0 220 110" aria-hidden="true">
+            <rect class="bar b1 hot"  x="10"  y="30" width="40" height="70" rx="6"/>
+            <rect class="bar b2 warm" x="65"  y="70" width="40" height="30" rx="6"/>
+            <rect class="bar b3"      x="120" y="20" width="40" height="80" rx="6"/>
+            <rect class="bar b4"      x="175" y="45" width="40" height="55" rx="6"/>
+          </svg>
+        </div>
+        <h3>Sorted for you.</h3>
+        <p>Due tonight first. Always.</p>
+      </article>
+      <article class="reason">
+        <div class="glyph">
+          <svg class="g-lock" viewBox="0 0 220 110" aria-hidden="true">
+            <rect x="12" y="22" width="80" height="62" rx="10" fill="none" stroke="var(--rule)" stroke-width="3"/>
+            <rect x="12" y="22" width="80" height="14" rx="10" fill="var(--rule)"/>
+            <circle cx="24" cy="29" r="2.5" fill="var(--bg)"/><circle cx="33" cy="29" r="2.5" fill="var(--bg)"/>
+            <path class="wall" d="M150 25 V85" stroke="var(--gold)" stroke-width="4" stroke-linecap="round"/>
+            <path d="M172 45 l16 20 m0 -20 l-16 20" stroke="var(--faint)" stroke-width="3" stroke-linecap="round"/>
+            <circle class="pkt" r="6" fill="var(--gold)"/>
+          </svg>
+        </div>
+        <h3>Stays on your computer.</h3>
+        <p>Nothing uploaded. No account.</p>
+      </article>
+      <article class="reason" tabindex="0">
+        <div class="glyph">
+          <svg class="g-spark" viewBox="0 0 220 110" aria-hidden="true">
+            <circle class="ring" cx="110" cy="55" r="44" fill="none" stroke-width="2"/>
+            <path class="star" d="M110 18Q116 45 137 55Q116 65 110 92Q104 65 83 55Q104 45 110 18Z"/>
+            <rect class="key" x="160" y="50" width="42" height="10" rx="5"/>
+            <circle class="key" cx="163" cy="55" r="9"/>
+          </svg>
+        </div>
+        <h3>AI only when you ask.</h3>
+        <p>Your own key. Off by default.</p>
+      </article>
+    </div>
+  </section>
 
-<section id="pilot">
-  <h2>Join the pilot</h2>
-  <div class="card flag">
-    <p>Silly Bus AI is in a small pilot with Canvas schools before its public
-    Chrome Web Store launch. If you'd like to try it — student or teacher —
-    open a pilot request and include your school and Canvas URL.</p>
-    <p><a class="btn btn-primary" href="https://github.com/ElMagoCT/sillybusai-site/issues/new?title=Pilot%20access%20request&labels=pilot&body=School%3A%0ACanvas%20URL%3A%0AGrade%2FYear%3A%0A">Request pilot access</a></p>
-  </div>
-</section>
+  <section class="how" id="how">
+    <h2 class="reveal">Three stops.</h2>
+    <div class="route" id="route">
+      <div class="route-line"></div>
+      <div class="route-progress" id="route-progress"></div>
+      <div class="route-bus" id="route-bus"><svg viewBox="-3 9 114 79"><use href="#bus-full"/></svg></div>
+      <ol class="steps">
+        <li><div class="pin"></div><b>Install</b><span>From the Chrome Web Store — coming soon. Pilot builds install from a zip.</span></li>
+        <li><div class="pin"></div><b>Sign in like normal</b><span>Canvas, Veracross, AP Classroom — the extension reads with the sessions you already have.</span></li>
+        <li><div class="pin"></div><b>Refresh</b><span>Every class, ranked by what's due. Ask the AI if you want help deciding.</span></li>
+      </ol>
+    </div>
+  </section>
 
-<footer class="site">
-  <a href="privacy.html">Privacy Policy</a> ·
-  <a href="https://github.com/ElMagoCT/sillybusai-site/issues">Contact / support</a>
-</footer>
+  <section class="pilot reveal" id="pilot">
+    <div class="pilot-card" id="pilot-card">
+      <h2>Canvas school? Try it early.</h2>
+      <p>A small pilot before the public launch. Students and teachers welcome.</p>
+      <a class="btn btn-primary" data-burst href="https://github.com/ElMagoCT/sillybusai-site/issues/new?title=Pilot%20access%20request&labels=pilot&body=School%3A%0ACanvas%20URL%3A%0AGrade%2FYear%3A%0A">Request access <span class="arrow">→</span></a>
+      <div class="bus" aria-hidden="true"><svg viewBox="-3 9 114 79"><use href="#bus-body"/></svg></div>
+    </div>
+  </section>
 
+  <footer>
+    <span>Silly Bus AI · built by a student, for students</span>
+    <span><a href="privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="https://github.com/ElMagoCT/sillybusai-site/issues">Support</a></span>
+  </footer>
 </div>
+
+<script src="app.js" defer></script>
 </body>
 </html>
