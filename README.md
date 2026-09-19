@@ -6,8 +6,12 @@ Pages. Plain HTML and CSS — no build step, no dependencies.
 | File | What it is |
 | --- | --- |
 | `privacy.html` | The privacy policy. **The Chrome Web Store listing requires this URL**, so the path must not change once the store listing points at it. |
-| `index.html` | Landing page; will carry the install link and the pilot signup. |
+| `index.html` | Landing page — hero, features, how-it-works, and the pilot signup (a pre-filled GitHub issue, no email collection). |
 | `style.css` | Shared styling, light and dark. |
+| `assets/img/logo.svg` | The wordmark-shaped logo as given. |
+| `assets/img/icon-square.svg` | Square version of the same logo (equal top/bottom padding added), source for every favicon/app-icon PNG in `assets/img/`. |
+| `favicon.ico`, `assets/img/icon-*.png` | Generated from `icon-square.svg` via `qlmanage` + `sips` — regenerate the same way if the logo changes. |
+| `WEBSTORE-LISTING.md` | Draft copy for the Chrome Web Store Developer Dashboard listing (title, description, permission justifications) — Micah submits it himself, it needs his Google account and the $5 registration fee. |
 
 Edit a file, commit, push — Pages republishes on its own, usually within a minute.
 

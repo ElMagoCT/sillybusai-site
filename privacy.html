@@ -5,18 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — Silly Bus AI</title>
 <meta name="description" content="How the Silly Bus AI Chrome extension handles your school data. Short version: it stays on your computer.">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/icon-32.png">
+<link rel="apple-touch-icon" href="assets/img/icon-180.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="wrap">
 
 <header class="site">
-  <div class="brand"><b>Silly Bus AI</b> <span>Chrome extension</span></div>
+  <a class="brand" href="./">
+    <img src="assets/img/icon-square.svg" alt="">
+    <b>Silly Bus AI</b> <span>Chrome extension</span>
+  </a>
+  <nav class="site">
+    <a href="./#features">Features</a>
+    <a href="./#pilot">Pilot</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
 </header>
 
 <h1>Privacy Policy</h1>
 <p class="lede">How this extension handles your school data.</p>
-<p class="updated">Last updated 14 September 2026 · applies to version 0.19 and later</p>
+<p class="updated">Last updated 19 September 2026 · applies to version 0.20 and later</p>
 
 <div class="card">
   <p><b>The short version.</b> Silly Bus AI runs entirely inside your own copy of
@@ -38,6 +49,8 @@ already has:</p>
       alongside work assigned in Canvas.</li>
   <li><b>AP Classroom</b>, if you use it — your AP assignments and progress checks,
       read while you have that site open. See below.</li>
+  <li><b>Albert.io</b>, if your class uses it — your assigned practice sets, due
+      dates and completion status, read while you have that site open. See below.</li>
 </ul>
 <p>It reads these as you, with the browser session you already have. It never asks
 for or stores your school password, and it never signs in on your behalf. If a
@@ -63,6 +76,19 @@ status and link for each one.</p>
 handed to any other part of the extension, and nothing about your AP Classroom
 account leaves your computer. The script runs only on that domain and does nothing
 on any other page.</p>
+
+<h2>Albert.io</h2>
+<p>Albert.io works the same way, for the same reason: a small script runs on
+<code>www.albert.io</code> while you have that page open and reads only what is
+assigned, when it is due, how many questions remain, and whether it's finished —
+never the questions themselves, their answer choices, or explanations. That is a
+deliberate limit, not a missing feature: pulling graded question content into this
+app, or from there into the AI assistant, would be doing the assignment rather than
+helping you plan around it, and it will not be changed to do that.</p>
+<p>Albert.io authorizes each request with your existing sign-in cookie for that
+site. The extension never reads that cookie's value, never stores it, and never
+sends it anywhere — the browser sends it directly to Albert.io the same way it
+would if you were browsing the site yourself.</p>
 
 <h2>The AI assistant</h2>
 <p>The assistant is <b>off unless you turn it on</b> by pasting your own Anthropic
@@ -112,6 +138,9 @@ data is ever sent anywhere.</p>
           <code>apc-api-production.collegeboard.org</code></td>
       <td>To read your AP assignments and progress checks from AP Classroom, as
           described above.</td></tr>
+  <tr><td><code>www.albert.io</code><br><code>api.albert.io</code></td>
+      <td>To read your assigned Albert.io practice sets and due dates, as
+          described above.</td></tr>
   <tr><td><code>api.anthropic.com</code></td>
       <td>To send your questions to the AI assistant, only when you have added your
           own API key.</td></tr>
@@ -138,7 +167,7 @@ version is published, and the date at the top will change to say so.</p>
 at <a href="https://github.com/ElMagoCT/sillybusai-site/issues">github.com/ElMagoCT/sillybusai-site/issues</a>.</p>
 
 <footer class="site">
-  <a href="./">Silly Bus AI</a> · Privacy Policy · last updated 14 September 2026
+  <a href="./">Silly Bus AI</a> · Privacy Policy · last updated 19 September 2026
 </footer>
 
 </div>

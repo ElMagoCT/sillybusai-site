@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-3 -8.5 114 114" role="img" aria-label="Silly Bus AI bus monogram">
+<defs>
+<mask id="sb4802sq" maskUnits="userSpaceOnUse" x="-60" y="-60" width="280" height="260">
+<rect x="-60" y="-60" width="280" height="260" fill="#fff"/>
+<path d="M49.7 12.5L55.7 12.5L49.3 73L43.3 73Z" fill="#000"/>
+<path d="M50.8 32H27.9Q24.4 32 24.4 28.5" fill="none" stroke="#000" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-0.5 47H24.6Q28.1 47 28.1 50.5" fill="none" stroke="#000" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="24.8" cy="71.5" r="13" fill="#000"/>
+<circle cx="86" cy="71.5" r="13" fill="#000"/>
+<path d="M68.7 21.479999999999997Q70.9848 28.7152 75.925 31Q70.9848 33.2848 68.7 40.52Q66.4152 33.2848 61.475 31Q66.4152 28.7152 68.7 21.479999999999997Z" fill="#000"/>
+</mask>
+<linearGradient id="sb4802sqbg" x1="0" y1="0" x2="1" y2="0" gradientTransform="rotate(135 0.5 0.5)">
+<stop offset="0" stop-color="#878787"/>
+<stop offset="1" stop-color="#E8A317"/>
+</linearGradient>
+</defs>
+<rect x="-3" y="-8.5" width="114" height="114" fill="url(#sb4802sqbg)"/>
+<g mask="url(#sb4802sq)">
+<path d="M4 57.5V27a13 13 0 0 1 13 -13H73a10 10 0 0 1 10 10V36H93.5a10.5 10.5 0 0 1 10.5 10.5V57.5a6 6 0 0 1 -6 6H10a6 6 0 0 1 -6 -6Z" fill="#1A1A17"/>
+<rect x="2" y="61.5" width="104" height="10" rx="5" fill="#1A1A17"/>
+</g>
+<path fill-rule="evenodd" fill="#212121" d="M14.3 72.5a10.5 10.5 0 1 0 21 0a10.5 10.5 0 1 0 -21 0ZM21.2 72.5a3.6 3.6 0 1 0 7.1 0a3.6 3.6 0 1 0 -7.1 0Z"/>
+<path fill-rule="evenodd" fill="#212121" d="M75.5 72.5a10.5 10.5 0 1 0 21 0a10.5 10.5 0 1 0 -21 0ZM82.4 72.5a3.6 3.6 0 1 0 7.1 0a3.6 3.6 0 1 0 -7.1 0Z"/>
+</svg>

@@ -3,39 +3,114 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Silly Bus AI</title>
-<meta name="description" content="Your homework, grades and schedule, read from Canvas and your teachers' docs inside the Chrome you already use.">
+<title>Silly Bus AI — every assignment, one board</title>
+<meta name="description" content="Silly Bus AI reads your Canvas, Veracross, teacher docs and AP Classroom into one prioritized homework board, inside the Chrome you already use. Runs on your computer — nothing is uploaded.">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/icon-32.png">
+<link rel="apple-touch-icon" href="assets/img/icon-180.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="wrap">
+<div class="wrap wide">
 
 <header class="site">
-  <div class="brand"><b>Silly Bus AI</b> <span>Chrome extension</span></div>
+  <a class="brand" href="./">
+    <img src="assets/img/icon-square.svg" alt="">
+    <b>Silly Bus AI</b> <span>Chrome extension</span>
+  </a>
+  <nav class="site">
+    <a href="#features">Features</a>
+    <a href="#pilot">Pilot</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
 </header>
 
-<h1>Your homework, in one place, on your own computer.</h1>
-<p class="lede">Silly Bus AI reads your Canvas, your schedule and the documents
-your teachers share, and turns them into a single board of what is actually due —
-inside the Chrome you already use, with the sign-ins you already have.</p>
+<section class="hero">
+  <div class="hero-badge"><img src="assets/img/icon-square.svg" alt="Silly Bus AI logo"></div>
+  <h1>Every assignment, every class, one board.</h1>
+  <p class="lede">Silly Bus AI reads your Canvas, Veracross, the docs your teachers
+  share, and AP Classroom — and turns them into a single prioritized board of
+  what's actually due, inside the Chrome you already use.</p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="https://github.com/ElMagoCT/sillybusai-site/issues/new?title=Pilot%20access%20request&labels=pilot&body=School%3A%0ACanvas%20URL%3A%0AGrade%2FYear%3A%0A">Request pilot access</a>
+    <a class="btn btn-secondary" href="#features">See how it works</a>
+  </div>
+  <span class="pill">🚧 Chrome Web Store listing in progress — the extension currently installs from source during the pilot</span>
+</section>
 
-<div class="card">
-  <p><b>Nothing is uploaded.</b> The whole app runs inside your browser. Your
-  assignments and grades stay on your computer, and there is no account to make.
-  See the <a href="privacy.html">privacy policy</a>.</p>
-</div>
+<section id="features">
+  <h2>What it actually does</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="icon-tile">🗂️</div>
+      <h3>One board, every source</h3>
+      <p>Canvas, your school's Veracross portal, syllabi and plans your teachers
+      share as Google Docs, AP Classroom progress checks, and Albert.io practice
+      sets — merged by due date instead of five separate tabs.</p>
+    </div>
+    <div class="card">
+      <div class="icon-tile">🔒</div>
+      <h3>Runs on your computer</h3>
+      <p>It's a Chrome extension, not a service. Your assignments and grades are
+      stored in your own browser's storage. Nothing is uploaded, and there's no
+      account required to use it.</p>
+    </div>
+    <div class="card">
+      <div class="icon-tile">✨</div>
+      <h3>An AI assistant, if you want one</h3>
+      <p>Ask it what to work on first, or what a rubric means. It's off until you
+      add your own Anthropic API key, and only what you ask goes to Anthropic —
+      billed to your account, not ours.</p>
+    </div>
+    <div class="card">
+      <div class="icon-tile">🎓</div>
+      <h3>Honest about what it can't see</h3>
+      <p>It reads with the sign-ins your Chrome already has, and says so plainly
+      when a source can't be reached instead of guessing. AP Classroom and
+      Albert.io questions are never read — only what's assigned and when it's due.</p>
+    </div>
+    <div class="card">
+      <div class="icon-tile">🚌</div>
+      <h3>Built by a student, for students</h3>
+      <p>Made by a high school senior who uses it on his own course load every
+      day — not a school-vendor product built from a spec sheet.</p>
+    </div>
+    <div class="card">
+      <div class="icon-tile">🏫</div>
+      <h3>Works beyond one school</h3>
+      <p>Built first for Canvas at Brophy, extending to any Canvas school. If
+      your school runs Canvas, it's worth trying.</p>
+    </div>
+  </div>
+</section>
 
-<h2>Where it is</h2>
-<p>The extension is being prepared for the Chrome Web Store. This page will carry
-the install link once it is published.</p>
+<section>
+  <h2>How it works</h2>
+  <ol class="steps">
+    <li><div><b>Install the extension.</b> <span>Currently shared as an unpacked
+    build during the pilot; a Chrome Web Store listing is on the way.</span></div></li>
+    <li><div><b>Point it at your school.</b> <span>Sign in to Canvas (and
+    Veracross or AP Classroom, if you use them) the normal way — the extension
+    reads with the session you already have.</span></div></li>
+    <li><div><b>Get one board.</b> <span>Every class, ranked by what's actually
+    due, refreshed on demand. Turn on the AI assistant if you want help
+    prioritizing or understanding an assignment.</span></div></li>
+  </ol>
+</section>
 
-<h2>Pilot</h2>
-<p>If your school uses Canvas and you would like to try it early, get in touch
-through <a href="https://github.com/ElMagoCT/sillybusai-site/issues">the issues
-page</a>.</p>
+<section id="pilot">
+  <h2>Join the pilot</h2>
+  <div class="card flag">
+    <p>Silly Bus AI is in a small pilot with Canvas schools before its public
+    Chrome Web Store launch. If you'd like to try it — student or teacher —
+    open a pilot request and include your school and Canvas URL.</p>
+    <p><a class="btn btn-primary" href="https://github.com/ElMagoCT/sillybusai-site/issues/new?title=Pilot%20access%20request&labels=pilot&body=School%3A%0ACanvas%20URL%3A%0AGrade%2FYear%3A%0A">Request pilot access</a></p>
+  </div>
+</section>
 
 <footer class="site">
-  <a href="privacy.html">Privacy Policy</a>
+  <a href="privacy.html">Privacy Policy</a> ·
+  <a href="https://github.com/ElMagoCT/sillybusai-site/issues">Contact / support</a>
 </footer>
 
 </div>

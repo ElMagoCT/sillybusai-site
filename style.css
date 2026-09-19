@@ -4,8 +4,11 @@
   --ink: #1d1c1a;
   --muted: #5d5a54;
   --rule: #e4e0d8;
-  --accent: #b4552d;
-  --accent-soft: #fdf3ee;
+  --accent: #a9761b;
+  --accent-soft: #fbf2df;
+  --grad-1: #878787;
+  --grad-2: #e8a317;
+  --bus: #1a1a17;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -14,8 +17,8 @@
     --ink: #f2efe9;
     --muted: #a6a199;
     --rule: #333029;
-    --accent: #e08a5f;
-    --accent-soft: #2a211c;
+    --accent: #e0af4f;
+    --accent-soft: #2a2114;
   }
 }
 * { box-sizing: border-box; }
@@ -27,10 +30,62 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 .wrap { max-width: 44rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
-header.site { border-bottom: 1px solid var(--rule); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
-.brand { display: flex; align-items: baseline; gap: .6rem; flex-wrap: wrap; }
+.wrap.wide { max-width: 56rem; }
+header.site { border-bottom: 1px solid var(--rule); padding-bottom: 1.5rem; margin-bottom: 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; text-decoration: none; color: inherit; }
+.brand img { width: 30px; height: 30px; border-radius: 7px; display: block; }
 .brand b { font-size: 1.35rem; letter-spacing: -.01em; }
 .brand span { color: var(--muted); font-size: .95rem; }
+nav.site { display: flex; gap: 1.25rem; font-size: .95rem; }
+nav.site a { color: var(--muted); text-decoration: none; }
+nav.site a:hover { color: var(--accent); }
+
+/* ---------- hero ---------- */
+.hero { padding: 1rem 0 2.5rem; text-align: center; }
+.hero-badge {
+  width: 84px; height: 84px; border-radius: 20px; margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, var(--grad-1), var(--grad-2));
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 10px 30px -12px rgba(184, 138, 30, .45);
+}
+.hero-badge img { width: 58px; height: 58px; }
+.hero h1 { font-size: 2.3rem; max-width: 34rem; margin: 0 auto .8rem; }
+.hero .lede { max-width: 34rem; margin: 0 auto 1.6rem; font-size: 1.1rem; }
+.cta-row { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem; }
+.btn {
+  display: inline-flex; align-items: center; gap: .4rem;
+  padding: .7rem 1.3rem; border-radius: 999px; font-weight: 600; font-size: .96rem;
+  text-decoration: none; border: 1px solid transparent;
+}
+.btn-primary { background: var(--ink); color: var(--bg); }
+.btn-primary:hover { opacity: .88; }
+.btn-secondary { background: transparent; color: var(--ink); border-color: var(--rule); }
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+.pill {
+  display: inline-block; font-size: .82rem; color: var(--muted); background: var(--accent-soft);
+  border: 1px solid var(--rule); border-radius: 999px; padding: .3rem .8rem; margin-top: .25rem;
+}
+
+/* ---------- feature grid ---------- */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.grid .card { margin: 0; }
+.grid .card h3 { margin: 0 0 .4rem; font-size: 1.02rem; letter-spacing: -.005em; }
+.grid .card p { margin: 0; color: var(--muted); font-size: .95rem; }
+.icon-tile { font-size: 1.4rem; margin-bottom: .5rem; }
+
+/* ---------- steps ---------- */
+.steps { counter-reset: step; padding: 0; list-style: none; margin: 1.5rem 0; }
+.steps li { counter-increment: step; display: flex; gap: 1rem; padding: .9rem 0; border-bottom: 1px solid var(--rule); }
+.steps li:last-child { border-bottom: none; }
+.steps li::before {
+  content: counter(step); flex: none; width: 1.9rem; height: 1.9rem; border-radius: 999px;
+  background: var(--accent-soft); color: var(--accent); font-weight: 700; font-size: .9rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.steps b { display: block; margin-bottom: .15rem; }
+.steps span { color: var(--muted); font-size: .95rem; }
+
+section { margin: 3rem 0; }
 h1 { font-size: 1.9rem; line-height: 1.2; letter-spacing: -.02em; margin: 0 0 .4rem; }
 h2 { font-size: 1.15rem; margin: 2.5rem 0 .6rem; letter-spacing: -.01em; }
 h2:first-of-type { margin-top: 1.5rem; }
