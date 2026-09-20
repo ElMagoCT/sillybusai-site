@@ -33,12 +33,13 @@ Edit a file, commit, push — Pages republishes on its own, usually within a min
 
 ## The custom domain
 
-`sillybusai.com` is registered but not pointed here yet. To connect it: add a
-`CNAME` file containing the bare domain, then at the registrar create a `CNAME`
-record for `www` → `elmagoct.github.io` and four `A` records for the apex domain
-pointing at GitHub's Pages addresses. After that the privacy URL becomes
-`https://sillybusai.com/privacy.html` and the Web Store listing should be updated
-to match.
+Live at **https://sillybusai.com** since 2026-09-20 (GoDaddy DNS: four `A` records
+for `@` → GitHub Pages, `CNAME www` → `elmagoct.github.io`; the `CNAME` file in this
+repo was committed by GitHub when the custom domain was set). `www.` and the old
+`elmagoct.github.io/sillybusai-site/` URL both 301 to the apex. The privacy URL the
+Web Store listing uses is `https://sillybusai.com/privacy.html` — keep that path.
+
+The extension is published: <https://chromewebstore.google.com/detail/silly-bus-ai/nkglcihnfamdlmkiihoncmikndpmidpa>.
 
 ## Keeping the policy true
 

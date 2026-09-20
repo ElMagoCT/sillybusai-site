@@ -88,7 +88,8 @@ prioritized dashboard inside the browser.
 ```
 https://sillybusai.com/privacy.html
 ```
-Until the domain is connected, use `https://elmagoct.github.io/sillybusai-site/privacy.html` and update it later.
+
+**Published listing:** https://chromewebstore.google.com/detail/silly-bus-ai/nkglcihnfamdlmkiihoncmikndpmidpa
 
 ## Distribution
 

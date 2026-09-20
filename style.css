@@ -246,6 +246,10 @@ h1, h2, h3 { font-family: var(--head); font-weight: 600; letter-spacing: -.025em
 .pilot-card h2 { font-size: clamp(2rem, 4.6vw, 3.4rem); max-width: 16ch; }
 .pilot-card p { margin: 1rem 0 1.8rem; opacity: .9; max-width: 32rem; }
 .pilot-card .btn-primary { background: #fff; color: #1a1a17; box-shadow: 0 12px 30px -12px rgba(0,0,0,.5); }
+.pilot-card .cta-row { position: relative; z-index: 1; }
+.btn-ghost.on-dark { color: #fff; border-color: rgba(255,255,255,.45); }
+.btn-ghost.on-dark:hover { border-color: #fff; color: #fff; }
+.btn .chrome { flex: none; }
 .pilot-card .bus { position: absolute; right: 4%; bottom: -6%; width: min(260px, 34%); opacity: .9; transform: translateX(30px) rotate(-3deg); transition: transform 1s var(--ease); }
 .pilot-card .bus svg { width: 100%; height: auto; }
 .in .pilot-card .bus { transform: none; }
