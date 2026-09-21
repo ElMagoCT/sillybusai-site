@@ -1,6 +1,6 @@
 # sillybusai-site
 
-The public web page for the **Silly Bus AI** Chrome extension, served by GitHub
+The public web page for the **SillyBus AI** Chrome extension, served by GitHub
 Pages. Plain HTML and CSS — no build step, no dependencies.
 
 | File | What it is |

@@ -123,6 +123,50 @@
     });
   }
 
+  /* ---------- the live customiser ---------- */
+  const mini = $("#mini");
+  if (mini) {
+    const apply = {
+      theme: (v) => mini.dataset.theme = v,
+      accent: (v) => mini.style.setProperty("--acc", v),
+      pattern: (v) => mini.dataset.pattern = v,
+      density: (v) => mini.dataset.density = v,
+      motion: (v) => mini.dataset.motion = v,
+      font: (v) => mini.style.setProperty("--m-head", v === "Inter" ? "var(--body)" : "var(--head)"),
+      size: (v) => { mini.style.setProperty("--m-size", v + "px"); $("#ts-out").textContent = v + "px"; },
+    };
+    $$("[data-ctl]").forEach((group) => {
+      const kind = group.dataset.ctl;
+      if (group.tagName === "INPUT") {
+        group.addEventListener("input", () => apply[kind](group.value));
+        return;
+      }
+      group.addEventListener("click", (e) => {
+        const btn = e.target.closest("button");
+        if (!btn) return;
+        $$("button", group).forEach((b) => b.classList.toggle("on", b === btn));
+        apply[kind](btn.dataset.v);
+      });
+    });
+  }
+
+  /* ---------- screenshot lightbox ---------- */
+  const shots = $$(".shot img");
+  if (shots.length) {
+    const box = document.createElement("div");
+    box.className = "lightbox";
+    box.innerHTML = '<img alt="">';
+    document.body.appendChild(box);
+    const big = $("img", box);
+    const close = () => { box.classList.remove("on"); document.body.style.overflow = ""; };
+    shots.forEach((img) => img.addEventListener("click", () => {
+      big.src = img.src; big.alt = img.alt;
+      box.classList.add("on"); document.body.style.overflow = "hidden";
+    }));
+    box.addEventListener("click", close);
+    addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+  }
+
   /* ---------- version tracker ---------- */
   fetch("releases.json", { cache: "no-cache" }).then((r) => r.json()).then((rel) => {
     const fmt = (d) => new Date(d + "T12:00:00").toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });

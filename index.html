@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Silly Bus AI — every class, one board</title>
-<meta name="description" content="Silly Bus AI reads Canvas, teacher docs, AP Classroom and more into one prioritized board, inside your Chrome. Nothing is uploaded.">
-<meta property="og:title" content="Silly Bus AI — every class, one board">
+<title>SillyBus AI — every class, one board</title>
+<meta name="description" content="SillyBus AI reads Canvas, teacher docs, AP Classroom and more into one prioritized board, inside your Chrome. Nothing is uploaded.">
+<meta property="og:title" content="SillyBus AI — every class, one board">
 <meta property="og:description" content="Every assignment from every source, in one place, on your own computer.">
 <meta property="og:image" content="https://sillybusai.com/assets/img/og-1200x630.png">
 <meta property="og:url" content="https://sillybusai.com/">
@@ -52,9 +52,10 @@
 
 <div class="wrap">
   <nav class="nav">
-    <a class="brand" href="./"><img src="assets/img/logo.svg" alt="" width="46" height="32">Silly Bus AI</a>
+    <a class="brand" href="./"><img src="assets/img/logo.svg" alt="" width="46" height="32">SillyBus AI</a>
     <div class="nav-links">
-      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#shots">See it</a>
+      <a class="hide-sm" href="#make-it-yours">Customise</a>
       <a class="hide-sm" href="#plans">Plans</a>
       <a class="hide-xs" href="privacy.html">Privacy</a>
       <a class="version" id="version" href="#changes" title="What's new"><span class="vdot"></span><span class="vtext">Changelog</span></a>
@@ -63,7 +64,7 @@
   </nav>
 
   <section class="hero">
-    <div class="hero-mark" id="hero-mark" title="Click me" role="img" aria-label="Silly Bus AI logo">
+    <div class="hero-mark" id="hero-mark" title="Click me" role="img" aria-label="SillyBus AI logo">
       <svg viewBox="-3 9 114 79"><use href="#bus-full"/><use class="twinkle" href="#sparkle-shape" fill="#E8A317" opacity=".9"/></svg>
     </div>
     <div class="road" aria-hidden="true"></div>
@@ -136,6 +137,191 @@
     </div>
   </section>
 
+  <section class="apps" id="apps">
+    <div class="sec-head reveal">
+      <h2>It reads what your school already uses.</h2>
+      <p>And every one of these switches off completely — off means gone from the screen, not skipped quietly.</p>
+    </div>
+    <div class="app-grid reveal-stagger">
+      <div class="app"><span class="app-ic" style="--ic:#e2453c">C</span><b>Canvas</b><i>assignments, grades, announcements</i></div>
+      <div class="app"><span class="app-ic" style="--ic:#1e5bb8">V</span><b>Veracross</b><i>schedule and real grades</i></div>
+      <div class="app"><span class="app-ic" style="--ic:#4b4fc8">AP</span><b>AP Classroom</b><i>progress checks, never the questions</i></div>
+      <div class="app"><span class="app-ic" style="--ic:#e8a317">a</span><b>Albert.io</b><i>practice sets and due dates</i></div>
+      <div class="app"><span class="app-ic" style="--ic:#2b7de9">D</span><b>Google Docs</b><i>the syllabus your teacher actually updates</i></div>
+      <div class="app"><span class="app-ic" style="--ic:#1a9c5b">▲</span><b>Drive</b><i>handouts, one click away</i></div>
+      <div class="app"><span class="app-ic" style="--ic:#3b74d8">31</span><b>Google Calendar</b><i>and any iCal address you paste</i></div>
+      <div class="app"><span class="app-ic" style="--ic:#14a06a">K</span><b>Khan Academy</b><i>a shortcut, on purpose</i></div>
+      <div class="app"><span class="app-ic" style="--ic:#6b6b6b">+</span><b>TeamSnap · Schoology<br>PowerSchool · Blackbaud</b><i>through their calendar feeds</i></div>
+    </div>
+  </section>
+
+  <section class="shots" id="shots">
+    <div class="sec-head reveal">
+      <h2>This is the actual thing.</h2>
+      <p>Real screenshots, five different looks. Click one.</p>
+    </div>
+    <div class="shot-strip reveal-stagger">
+      <figure class="shot"><img src="assets/img/shots/board-aurora.jpg" alt="The SillyBus AI board: classes with grade rings, tonight's four assignments, chat" width="1280" height="800" loading="lazy"><figcaption>The board</figcaption></figure>
+      <figure class="shot"><img src="assets/img/shots/chemistry-dark-orbit.jpg" alt="A class page in dark mode: what's open, the grade breakdown, the textbook" width="1280" height="800" loading="lazy"><figcaption>One class, dark</figcaption></figure>
+      <figure class="shot"><img src="assets/img/shots/assignments-warm-tide.jpg" alt="Every assignment listed by class, in the warm theme" width="1280" height="800" loading="lazy"><figcaption>Everything open</figcaption></figure>
+      <figure class="shot"><img src="assets/img/shots/calendar-drift-blue.jpg" alt="The calendar view with a blue accent" width="1280" height="800" loading="lazy"><figcaption>Your week</figcaption></figure>
+      <figure class="shot"><img src="assets/img/shots/appearance-breathe.jpg" alt="The Appearance settings: theme, accent colour and ten background patterns" width="1280" height="800" loading="lazy"><figcaption>Settings</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="studio" id="make-it-yours">
+    <div class="sec-head reveal">
+      <h2>Make it yours.</h2>
+      <p>Every setting below is a real one. Try them — the board on the right is live.</p>
+    </div>
+    <div class="studio-grid reveal">
+      <div class="panel">
+        <div class="ctl">
+          <label>Theme</label>
+          <div class="seg" role="group" data-ctl="theme">
+            <button data-v="light" class="on">Light</button>
+            <button data-v="warm">Warm</button>
+            <button data-v="dark">Dark</button>
+          </div>
+        </div>
+        <div class="ctl">
+          <label>Accent <span class="hint">one colour, everything else mixed from it</span></label>
+          <div class="swatches" data-ctl="accent">
+            <button class="sw on" data-v="#0f766e" style="--s:#0f766e" aria-label="Teal"></button>
+            <button class="sw" data-v="#2563eb" style="--s:#2563eb" aria-label="Blue"></button>
+            <button class="sw" data-v="#4f46e5" style="--s:#4f46e5" aria-label="Indigo"></button>
+            <button class="sw" data-v="#7c3aed" style="--s:#7c3aed" aria-label="Purple"></button>
+            <button class="sw" data-v="#db2777" style="--s:#db2777" aria-label="Pink"></button>
+            <button class="sw" data-v="#dc2626" style="--s:#dc2626" aria-label="Red"></button>
+            <button class="sw" data-v="#ea580c" style="--s:#ea580c" aria-label="Orange"></button>
+            <button class="sw" data-v="#d97706" style="--s:#d97706" aria-label="Amber"></button>
+            <button class="sw" data-v="#16a34a" style="--s:#16a34a" aria-label="Green"></button>
+            <button class="sw" data-v="#0891b2" style="--s:#0891b2" aria-label="Cyan"></button>
+            <button class="sw" data-v="#475569" style="--s:#475569" aria-label="Slate"></button>
+            <button class="sw" data-v="#9a3412" style="--s:#9a3412" aria-label="Brown"></button>
+          </div>
+        </div>
+        <div class="ctl">
+          <label>Background pattern <span class="hint">the last six move</span></label>
+          <div class="chips" data-ctl="pattern">
+            <button data-v="none">None</button>
+            <button data-v="glow" class="on">Glow</button>
+            <button data-v="dots">Dots</button>
+            <button data-v="grid">Grid</button>
+            <button data-v="aurora">Aurora<em>moves</em></button>
+            <button data-v="drift">Drift<em>moves</em></button>
+            <button data-v="waves">Waves<em>moves</em></button>
+            <button data-v="orbit">Orbit<em>moves</em></button>
+            <button data-v="tide">Tide<em>moves</em></button>
+            <button data-v="breathe">Breathe<em>moves</em></button>
+          </div>
+        </div>
+        <div class="ctl two">
+          <div>
+            <label>Density</label>
+            <div class="seg" role="group" data-ctl="density">
+              <button data-v="compact" class="on">Compact</button>
+              <button data-v="roomy">Roomy</button>
+            </div>
+          </div>
+          <div>
+            <label>Text size <output id="ts-out">14px</output></label>
+            <input type="range" min="12" max="18" step="1" value="14" data-ctl="size" aria-label="Text size">
+          </div>
+        </div>
+        <div class="ctl two">
+          <div>
+            <label>Heading font</label>
+            <div class="seg" role="group" data-ctl="font">
+              <button data-v="Fraunces" class="on">Fraunces</button>
+              <button data-v="Inter">Inter</button>
+            </div>
+          </div>
+          <div>
+            <label>Motion</label>
+            <div class="seg" role="group" data-ctl="motion">
+              <button data-v="auto" class="on">On</button>
+              <button data-v="off">Off</button>
+            </div>
+          </div>
+        </div>
+        <p class="panel-note">Plus: which sections show, short codes per class, classes hidden from the board, custom order, where it opens, whether the week starts Monday — and twelve more.</p>
+      </div>
+
+      <div class="mini" id="mini" data-theme="light" data-pattern="glow" data-density="compact" style="--acc:#0f766e">
+        <div class="mini-pat" aria-hidden="true"></div>
+        <div class="mini-inner">
+          <div class="mini-top">
+            <span class="mini-brand"><i></i>SillyBus AI</span>
+            <span class="mini-chip">Veracross</span>
+            <span class="mini-chip">Canvas</span>
+            <span class="mini-chip hide-narrow">Docs</span>
+            <span class="mini-refresh">Refresh</span>
+          </div>
+          <div class="mini-tabs"><b>Home</b><span>APP</span><span>ACB</span><span>APC</span><span>AEL</span></div>
+          <div class="mini-body">
+            <div class="mini-classes">
+              <div class="mini-cls"><span class="ring" style="--p:91">A-</span><div><b>AP Physics C</b><i>6 open · 91.4%</i></div></div>
+              <div class="mini-cls"><span class="ring" style="--p:88">B+</span><div><b>AP Calculus BC</b><i>3 open · 88.2%</i></div></div>
+              <div class="mini-cls"><span class="ring" style="--p:85">B</span><div><b>AP Chemistry</b><i>6 open · 84.6%</i></div></div>
+              <div class="mini-cls"><span class="ring" style="--p:93">A</span><div><b>AP English</b><i>6 open · 93.1%</i></div></div>
+            </div>
+            <div class="mini-mid">
+              <div class="mini-hello">Hello</div>
+              <div class="mini-sub">25 open, ~4h 35m of it before tomorrow ends.</div>
+              <div class="mini-cards">
+                <div class="mini-card"><span class="tag">AP CALC</span><b>Unit 1 Progress Check</b><i>~1h · test</i></div>
+                <div class="mini-card"><span class="tag">AP PHYS</span><b>Benchmark 1: Pretest</b><i>~30m · work</i></div>
+              </div>
+              <div class="mini-ask"><span>what should I do first tonight?</span><em>Send</em></div>
+            </div>
+            <div class="mini-rail">
+              <div class="rail-h">Assignments</div>
+              <div class="rail-row"><span class="rail-k">APP</span>Benchmark 1<em>2 days ago</em></div>
+              <div class="rail-row"><span class="rail-k">ACB</span>Areas and Volumes<em>Tue</em></div>
+              <div class="rail-row"><span class="rail-k">APC</span>Book Problems<em>in 6 days</em></div>
+              <div class="rail-row"><span class="rail-k">AEL</span>Annotations<em>in 5 days</em></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="focus" id="focus">
+    <div class="sec-head reveal">
+      <span class="badge-now">Being built right now</span>
+      <h2>And a way to actually start.</h2>
+      <p>Self-discipline, built in. Three modes — you pick.</p>
+    </div>
+    <div class="focus-grid reveal-stagger">
+      <article class="fmode">
+        <div class="fdemo off"><span class="fdemo-site">youtube.com</span><span class="fnothing">nothing happens</span></div>
+        <h3>Off</h3>
+        <p>Not installed, not watching. No site permission is even held.</p>
+      </article>
+      <article class="fmode">
+        <div class="fdemo"><span class="fdemo-site">youtube.com</span>
+          <div class="fcard"><b>2 things due tomorrow</b><i>Lab report · Problem set</i><span class="fbtn">Open the board</span></div>
+        </div>
+        <h3>Reminder</h3>
+        <p>A card slides in with what's actually due. Wave it away and the page is never touched.</p>
+      </article>
+      <article class="fmode">
+        <div class="fdemo"><span class="fdemo-site">youtube.com</span>
+          <div class="fgate"><b>Lab report is due at 8:00 AM</b><div class="fpin"><i></i><i></i><i></i><i></i></div><span class="fhint">PIN to get past</span></div>
+        </div>
+        <h3>Block</h3>
+        <p>A gate that names the work, with a PIN bypass for one minute or an hour.</p>
+      </article>
+    </div>
+    <ul class="focus-facts reveal-stagger">
+      <li><b>Your list.</b> Eleven sites to start — YouTube, TikTok, Instagram, Discord, Netflix and the rest. Remove any, add your own.</li>
+      <li><b>Never your schoolwork.</b> Canvas, Veracross, Docs, College Board and Chrome's own settings can't be blocked.</li>
+      <li><b>Nothing due? It lets go.</b> A block that stays shut on a free Friday is a punishment, not homework help.</li>
+    </ul>
+  </section>
+
   <section class="how" id="how">
     <h2 class="reveal">Three stops.</h2>
     <div class="route" id="route">
@@ -206,7 +392,7 @@
   </section>
 
   <footer>
-    <span>Silly Bus AI · built by a student, for students</span>
+    <span>SillyBus AI · built by a student, for students</span>
     <span><a href="https://chromewebstore.google.com/detail/silly-bus-ai/nkglcihnfamdlmkiihoncmikndpmidpa">Chrome Web Store</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="https://github.com/ElMagoCT/sillybusai-site/issues">Support</a></span>
   </footer>
 </div>
