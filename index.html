@@ -23,13 +23,19 @@
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <linearGradient id="bus-grad" x1="0" y1="0" x2="1" y2="0" gradientTransform="rotate(135 0.5 0.5)">
+    <!-- User space on purpose: rotate() inside objectBoundingBox is stretched by
+         each shape's aspect ratio, so 135 degrees drew a different angle in the
+         wide tile than in the square icon. These endpoints are that same axis,
+         measured against the box, and hold at every size. -->
+    <linearGradient id="bus-grad" gradientUnits="userSpaceOnUse"
+      x1="145.9" y1="48.5" x2="54" y2="140.4">
       <stop offset="0" stop-color="#878787"/><stop offset="1" stop-color="#E8A317"/>
     </linearGradient>
     <mask id="bus-mask" maskUnits="userSpaceOnUse" x="-60" y="-60" width="280" height="260">
       <rect x="-60" y="-60" width="280" height="260" fill="#fff"/>
       <path d="M49.7 12.5L55.7 12.5L49.3 73L43.3 73Z" fill="#000"/>
-      <path d="M14 21V53M14 21H25A8 8 0 0 1 25 37H14M14 37H27A8 8 0 0 1 27 53H14" fill="none" stroke="#000" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M50.8 32H27.9Q24.4 32 24.4 28.5" fill="none" stroke="#000" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M-0.5 47H24.6Q28.1 47 28.1 50.5" fill="none" stroke="#000" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
       <circle cx="24.8" cy="71.5" r="13" fill="#000"/><circle cx="86" cy="71.5" r="13" fill="#000"/>
       <use href="#sparkle-shape" fill="#000"/>
     </mask>
@@ -43,7 +49,7 @@
       <path fill-rule="evenodd" fill="#212121" d="M75.5 72.5a10.5 10.5 0 1 0 21 0a10.5 10.5 0 1 0 -21 0ZM82.4 72.5a3.6 3.6 0 1 0 7.1 0a3.6 3.6 0 1 0 -7.1 0Z"/>
     </g>
     <g id="bus-full">
-      <rect x="-3" y="9" width="114" height="79" fill="url(#bus-grad)"/>
+      <rect x="-11" y="1" width="130" height="95" fill="url(#bus-grad)"/>
       <use href="#bus-body"/>
     </g>
   </defs>
@@ -65,7 +71,7 @@
 
   <section class="hero">
     <div class="hero-mark" id="hero-mark" title="Click me" role="img" aria-label="SillyBus AI logo">
-      <svg viewBox="-3 9 114 79"><use href="#bus-full"/><use class="twinkle" href="#sparkle-shape" fill="#E8A317" opacity=".9"/></svg>
+      <svg viewBox="-11 1 130 95"><use href="#bus-full"/><use class="twinkle" href="#sparkle-shape" fill="#E8A317" opacity=".9"/></svg>
     </div>
     <div class="road" aria-hidden="true"></div>
     <h1 class="rise">Every class.<br>One <span class="accent">board.</span></h1>
@@ -88,7 +94,7 @@
         <div class="board-head"><b>Tonight</b><span>5 open</span></div>
         <div class="slot"></div><div class="slot"></div><div class="slot"></div><div class="slot"></div><div class="slot"></div>
       </div>
-      <div class="stage-bus" aria-hidden="true"><svg viewBox="-3 9 114 79"><use href="#bus-full"/></svg></div>
+      <div class="stage-bus" aria-hidden="true"><svg viewBox="-11 1 130 95"><use href="#bus-full"/></svg></div>
       <button class="replay" type="button" aria-label="Replay">↻</button>
     </div>
     <p class="stage-caption reveal">Five places your homework hides. <b>One place it shows up.</b></p>
@@ -328,7 +334,7 @@
     <div class="route" id="route">
       <div class="route-line"></div>
       <div class="route-progress" id="route-progress"></div>
-      <div class="route-bus" id="route-bus"><svg viewBox="-3 9 114 79"><use href="#bus-full"/></svg></div>
+      <div class="route-bus" id="route-bus"><svg viewBox="-11 1 130 95"><use href="#bus-full"/></svg></div>
       <ol class="steps">
         <li><div class="pin"></div><b>Add to Chrome</b><span>One click from the <a href="https://chromewebstore.google.com/detail/silly-bus-ai/nkglcihnfamdlmkiihoncmikndpmidpa">Chrome Web Store</a>. No account, no setup wizard.</span></li>
         <li><div class="pin"></div><b>Stay signed in</b><span>Canvas, Veracross, AP Classroom — it reads with the logins you already have. It never asks for your password.</span></li>
@@ -388,7 +394,7 @@
         <a class="btn btn-primary" data-burst href="https://chromewebstore.google.com/detail/silly-bus-ai/nkglcihnfamdlmkiihoncmikndpmidpa">Add to Chrome <span class="arrow">→</span></a>
         <a class="btn btn-ghost on-dark" href="https://github.com/ElMagoCT/sillybusai-site/issues/new?title=Something%20broke&labels=bug&body=School%3A%0AWhat%20happened%3A%0A">Something broke? Tell me</a>
       </div>
-      <div class="bus" aria-hidden="true"><svg viewBox="-3 9 114 79"><use href="#bus-body"/></svg></div>
+      <div class="bus" aria-hidden="true"><svg viewBox="-11 1 130 95"><use href="#bus-body"/></svg></div>
     </div>
   </section>
 
