@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — SillyBus AI</title>
-<meta name="description" content="How the SillyBus AI Chrome extension handles your school data. Short version: it stays on your computer.">
+<meta name="description" content="How the SillyBus AI Chrome extension handles your school data, your school mail and your Canvas submissions. Short version: it stays on your computer.">
 <link rel="icon" href="assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icon-32.png">
 <link rel="apple-touch-icon" href="assets/img/icon-180.png">
@@ -23,7 +23,7 @@
 
 <h1>Privacy Policy</h1>
 <p class="lede">How this extension handles your school data.</p>
-<p class="updated">Last updated 19 September 2026 · applies to version 0.20 and later</p>
+<p class="updated">Last updated 22 September 2026 · applies to version 0.21.6 and later</p>
 
 <div class="card">
   <p><b>The short version.</b> SillyBus AI runs entirely inside your own copy of
@@ -47,6 +47,10 @@ already has:</p>
       read while you have that site open. See below.</li>
   <li><b>Albert.io</b>, if your class uses it — your assigned practice sets, due
       dates and completion status, read while you have that site open. See below.</li>
+  <li><b>Your school mail</b>, and only your school mail — read from Gmail, with
+      most of your mailbox thrown away before anything is stored. See below.</li>
+  <li><b>AP Central</b> — the Course and Exam Description your AP subject
+      publishes publicly. No sign-in; it is a public document.</li>
 </ul>
 <p>It reads these as you, with the browser session you already have. It never asks
 for or stores your school password, and it never signs in on your behalf. If a
@@ -86,6 +90,53 @@ site. The extension never reads that cookie's value, never stores it, and never
 sends it anywhere — the browser sends it directly to Albert.io the same way it
 would if you were browsing the site yourself.</p>
 
+<h2>Your school mail</h2>
+<p>The Mail page reads your Gmail through the Atom feed Google has served since
+2004, using the sign-in your Chrome already has. There is no OAuth grant and no
+Google Cloud project, which also means there is nothing here for a school
+administrator to switch off. It reads <b>unread mail only</b>, about twenty
+messages at a time, and a preview of each rather than the whole message.</p>
+<p><b>Most of your mail is discarded before it is stored.</b> A message is kept
+only if it comes from your school's domain, or names one of your classes, or
+names a piece of your work together with a day. Everything else — a shipping
+notice, a personal thread, a newsletter — is dropped inside your browser, in the
+same code that fetched it. It is never written to disk, never reaches the app,
+and never reaches the AI.</p>
+<p><b>The AI is never handed your mailbox.</b> Nothing goes to Anthropic until
+you press the button on one message, and then it is that one message. The
+question is typed into the visible chat box first, so you can read exactly what
+is being sent before it goes.</p>
+<p><b>Nothing is ever sent, deleted, archived or labelled.</b> Every request the
+extension makes to Gmail is a read. Replying opens an ordinary Gmail draft with
+the reply already in it, and you press Send yourself.</p>
+
+<h2>Handing work in to Canvas</h2>
+<p>The extension can upload a file you have attached to an assignment straight to
+Canvas. It <b>ships switched off</b> and does nothing until you turn it on in
+Settings → Connections.</p>
+<p>With it on, it still asks you every single time, showing the class, the
+assignment, the due date, the exact file and its size, and whether you have
+already handed something in. There is deliberately no "don't ask again". A failed
+submission is never retried on its own. The file goes from your browser to your
+school's Canvas — it does not pass through us, because there is no server of ours
+for it to pass through.</p>
+
+<h2>Focus</h2>
+<p>Focus is the optional setting that helps you get back to work. It is <b>off
+unless you turn it on</b>, and while it is off the extension holds no permission
+for any site outside the ones listed above and runs no code on one.</p>
+<p>When you turn it on, Chrome asks your permission for the sites <b>you</b> put
+on your list, and only those. On one of them the extension does exactly one
+thing: it shows a reminder of what you have due, or covers the page until you
+type your bypass PIN. It does not read the page, the video, the posts, or your
+search or watch history, and it records nothing about the visit. Switching Focus
+off hands those permissions back to Chrome.</p>
+<p>What Focus keeps, all inside your own Chrome: your mode, your site list, and
+your bypass PIN stored as a hash rather than as the PIN itself. No list of the
+sites you visit is built, kept or sent anywhere. Your schoolwork cannot be
+blocked — Canvas, Docs, Drive, AP Classroom, Albert.io, your school's own domains
+and the Chrome Web Store are all refused if you try to add them.</p>
+
 <h2>The AI assistant</h2>
 <p>The assistant is <b>off unless you turn it on</b> by pasting your own Anthropic
 API key into the extension's Options page. If you never add a key, no part of your
@@ -119,9 +170,13 @@ data is ever sent anywhere.</p>
   <tr><td><code>storage</code></td>
       <td>To save your settings — your AI key and your class schedule address — so
           you do not re-enter them on every visit.</td></tr>
+  <tr><td><code>unlimitedStorage</code></td>
+      <td>So Chrome never evicts your board, your class settings or the backup copy
+          of them when disk space runs low.</td></tr>
   <tr><td><code>scripting</code></td>
-      <td>To run the small reader script on AP Classroom described above. It is used
-          for that page and no other.</td></tr>
+      <td>To run the small reader scripts on AP Classroom and Albert.io described
+          above, and to register the Focus reminder on sites you have chosen. It is
+          used for those and nothing else.</td></tr>
   <tr><td><code>*.instructure.com</code></td>
       <td>To read your courses, assignments and grades from Canvas. Canvas gives
           each school its own address, so the exact one is not known in advance.</td></tr>
@@ -137,9 +192,21 @@ data is ever sent anywhere.</p>
   <tr><td><code>www.albert.io</code><br><code>api.albert.io</code></td>
       <td>To read your assigned Albert.io practice sets and due dates, as
           described above.</td></tr>
+  <tr><td><code>drive.google.com</code></td>
+      <td>To open the handouts and PDFs those documents link to.</td></tr>
+  <tr><td><code>mail.google.com</code></td>
+      <td>To read your school mail, filtered as described above. Read only —
+          nothing is ever sent, deleted or changed.</td></tr>
+  <tr><td><code>apcentral.collegeboard.org</code></td>
+      <td>To download the public Course and Exam Description for an AP subject
+          once, so a study guide follows the real unit framework.</td></tr>
   <tr><td><code>api.anthropic.com</code></td>
       <td>To send your questions to the AI assistant, only when you have added your
           own API key.</td></tr>
+  <tr><td>Optional site access<br><code>*://*/*</code></td>
+      <td>Only for Focus, and only the sites you put on your own list. Nothing is
+          requested while Focus is off, and turning it off gives the access back.
+          This is why Chrome shows it as optional rather than required.</td></tr>
 </table>
 
 <h2>Deleting your data</h2>
@@ -173,7 +240,7 @@ version is published, and the date at the top will change to say so.</p>
 at <a href="https://github.com/ElMagoCT/sillybusai-site/issues">github.com/ElMagoCT/sillybusai-site/issues</a>.</p>
 
 <footer class="site">
-  <a href="./">SillyBus AI</a> · Privacy Policy · last updated 19 September 2026
+  <a href="./">SillyBus AI</a> · Privacy Policy · last updated 22 September 2026
 </footer>
 
 </div>

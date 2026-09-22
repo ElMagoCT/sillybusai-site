@@ -20,38 +20,56 @@ Every assignment from Canvas, Veracross, and teacher docs — one prioritized bo
 **Language:** English (United States)
 
 **Detailed description**
+
+> Rewritten 22 September 2026 after a Chrome Web Store rejection for keyword
+> stuffing: "more than 5 brands/tools in the description". Google's fix is to
+> name at most five and link the rest. This version names four outside brands
+> (Canvas, Veracross, Google Docs, Anthropic) plus Chrome, and sends the rest
+> — AP Classroom, Albert.io, AP Central — to https://sillybusai.com/supported.html.
+> **Do not add brand names back into this box.** They belong on that page, or
+> burned into a promo screenshot.
+
 ```
-Silly Bus AI reads your homework, grades, and schedule straight from the
-sources your teachers already use — and turns them into one board of what's
-actually due, instead of five browser tabs.
+SillyBus AI puts everything you have due on one board, inside the Chrome you
+already use — instead of five tabs and a group chat.
 
-WHAT IT READS
-• Canvas — courses, assignments, due dates, grades
-• Your school's Veracross portal — schedule and grades
-• Google Docs your teachers share — syllabi and weekly plans, so work
-  assigned in a document doesn't get missed
-• AP Classroom — assignments and progress checks (never the questions)
-• Albert.io — assigned practice sets and due dates (never the questions)
+WHAT YOU GET
+• One board: every assignment, test, reading and project across all your
+  classes, in the order they are actually due.
+• Every item says where its due date came from, so you can check it against
+  the source.
+• Class pages: your grade breakdown, a what-if calculator, your open work, and
+  links to the syllabus and the homework doc.
+• Your daily schedule and calendar.
+• A Life page for the things that are yours, not the school's.
+• Tick work off as you finish it; a Done page keeps the record.
 
-It reads all of this using the sign-ins you already have in Chrome. It never
-asks for your school password and never signs in on your behalf.
+WHERE IT READS FROM
+It reads the places your work actually lives — Canvas, Veracross, and the
+Google Docs your teachers share with you — using the sign-ins your Chrome
+already has. It never asks for your school password and never signs in on your
+behalf.
+The full list of supported sites is here: https://sillybusai.com/supported.html
 
-RUNS ON YOUR COMPUTER
-Silly Bus AI is a Chrome extension, not a service. Your assignments and
-grades are stored in your browser's own storage. Nothing is uploaded, there's
-no account to create, and no server ever sees your schoolwork.
+RUNS ON YOUR OWN COMPUTER
+This is an extension, not a service. Your assignments and grades are stored in
+your own browser. There is no account to create, nothing is uploaded, and no
+server of ours ever sees your schoolwork.
 
 AN AI ASSISTANT, IF YOU WANT ONE
-Ask it what to prioritize, or what a rubric is asking for. It's off until you
-add your own Anthropic API key in Settings — only what you ask is sent to
-Anthropic, billed to your own account.
+Ask it what to do first, or what a rubric is really asking for. It stays off
+until you add your own Anthropic API key in Settings — only what you ask is
+sent, billed to your own account.
 
 BUILT BY A STUDENT
-Made by a high school senior who uses it on his own course load every day.
+Made by a high school senior who runs it on his own course load every day.
 
 FREE DURING THE PILOT
-This version is free. Plans (a free tier plus $5 and $10 monthly options
-with the AI included) arrive with the public launch — see sillybusai.com.
+This version is free. Paid plans with the AI included arrive at the public
+launch — see sillybusai.com.
+
+SillyBus AI is an independent project and is not affiliated with any school or
+with the sites it reads.
 
 Privacy policy: https://sillybusai.com/privacy.html
 ```
