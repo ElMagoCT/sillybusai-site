@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Every feature — SillyBus AI</title>
+<meta name="description" content="Everything SillyBus AI does, and where to find it — the board, your classes, Ask, the sites it reads, Focus, and every setting.">
+<meta property="og:title" content="Every feature — SillyBus AI">
+<meta property="og:description" content="Everything it does, and where to find it.">
+<meta property="og:image" content="https://sillybusai.com/assets/img/og-1200x630.png">
+<meta property="og:url" content="https://sillybusai.com/guide.html">
+<link rel="canonical" href="https://sillybusai.com/guide.html">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="assets/img/icon-square.svg">
+<link rel="apple-touch-icon" href="assets/img/icon-180.png">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="pages.css">
+</head>
+<body class="page-guide">
+
+<!-- Section marks, drawn once and reused. Line glyphs, not emoji. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="g-start" viewBox="0 0 24 24"><path d="M5 12h11M12 6l6 6-6 6"/></symbol>
+    <symbol id="g-board" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M9 4v16M15 4v16"/></symbol>
+    <symbol id="g-class" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 8 8"/></symbol>
+    <symbol id="g-ask" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+    <symbol id="g-sources" viewBox="0 0 24 24"><path d="M4 6h6M4 12h6M4 18h6M14 12h6M10 6l4 6-4 6"/></symbol>
+    <symbol id="g-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+    <symbol id="g-focus" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="g-yours" viewBox="0 0 24 24"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 7l3 3"/></symbol>
+    <symbol id="g-keys" viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6 10h1M10 10h1M14 10h1M18 10h0M7 14h10"/></symbol>
+    <symbol id="g-data" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <nav class="nav">
+    <a class="brand" href="./"><img src="assets/img/logo.svg" alt="" width="46" height="32">SillyBus AI</a>
+    <div class="nav-links">
+      <a class="hide-sm" href="tour.html">Tour</a>
+      <a class="hide-sm on" href="guide.html" aria-current="page">Guide</a>
+      <a class="hide-xs" href="privacy.html">Privacy</a>
+      <a class="btn btn-ghost" href="https://chromewebstore.google.com/detail/silly-bus-ai/nkglcihnfamdlmkiihoncmikndpmidpa">Add to Chrome</a>
+    </div>
+  </nav>
+
+  <header class="page-head">
+    <p class="kicker">The guide</p>
+    <h1>Every feature.<br><span class="accent">Where to find it.</span></h1>
+    <p class="lede">New here? <a href="tour.html">Take the two-minute tour</a> first.</p>
+  </header>
+
+  <div class="guide-tools" id="tools">
+    <label class="gsearch">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+      <input id="q" type="search" placeholder="Search — try “grades”, “pin”, “calendar”" autocomplete="off" aria-label="Search the features">
+      <span class="gcount" id="count"></span>
+    </label>
+    <div class="gchips" id="chips" role="group" aria-label="Show one part"></div>
+  </div>
+
+  <div class="guide">
+    <nav class="gindex" id="gindex" aria-label="Sections"></nav>
+
+    <div class="gbody" id="gbody">
+
+      <section class="gsec" id="start" data-title="Getting started">
+        <h2><svg class="gi"><use href="#g-start"/></svg>Getting started</h2>
+        <div class="feats">
+          <article class="feat" id="install"><h3>Add it to Chrome</h3>
+            <p>One click from the Chrome Web Store. No account, no password.</p>
+            <span class="where">Chrome Web Store</span></article>
+          <article class="feat" id="setup"><h3>Setup, step by step</h3>
+            <p>Opens on its own the first time. Four steps, each one retryable.</p>
+            <span class="where">Opens by itself · the “finish setting up” mark</span>
+            <details><summary>The four steps</summary><ol>
+              <li><b>Your sign-ins</b> — nothing to type. It uses the sites you're already signed in to in this Chrome.</li>
+              <li><b>Connect</b> — Canvas, your class schedule and your grades.</li>
+              <li><b>Your classes</b> — it finds each class's textbook, syllabus and homework doc. Check them, mark them reviewed, or skip for now.</li>
+              <li><b>First pull</b> — your homework lands on the board.</li></ol></details></article>
+          <article class="feat" id="tour"><h3>The tour</h3>
+            <p>Seven stops around the board, right after setup.</p>
+            <span class="where">Settings › Main page › Take the tour again</span></article>
+          <article class="feat" id="key"><h3>Your own AI key</h3>
+            <p>The board works without AI. Add a key and Ask, study guides and class learning turn on.</p>
+            <span class="where">Extension options</span></article>
+          <article class="feat" id="school"><h3>Any school on Canvas</h3>
+            <p>Type your school's Canvas address once and the rest works there.</p>
+            <span class="where">Settings › Connections › Your school</span></article>
+        </div>
+      </section>
+
+      <section class="gsec" id="board" data-title="The board">
+        <h2><svg class="gi"><use href="#g-board"/></svg>The board</h2>
+        <div class="feats">
+          <article class="feat" id="first-four"><h3>First four</h3>
+            <p>The four things to do first — by due date, size and kind.</p>
+            <span class="where">Home</span></article>
+          <article class="feat" id="assignments"><h3>Assignments</h3>
+            <p>Everything open, grouped by class, soonest first.</p>
+            <span class="where">Right column · Assignments tab</span>
+            <details><summary>What the marks mean</summary>
+              <p><b>HW</b> homework · <b>T</b> test · <b>Q</b> quiz · <b>PS</b> problem set · <b>R</b> reading · <b>!</b> overdue. Hover a mark for the word.</p></details></article>
+          <article class="feat" id="tick"><h3>Tick it done</h3>
+            <p>Hover a row and tick it. Changed your mind? Undo it from Done.</p>
+            <span class="where">Any row · Done tab</span></article>
+          <article class="feat" id="strip"><h3>Class strip</h3>
+            <p>Every class as a chip: the ring is how soon, the letter is the grade.</p>
+            <span class="where">Top of Home</span></article>
+          <article class="feat" id="calendar"><h3>Calendar</h3>
+            <p>Today's periods, the week, the month — whichever you like.</p>
+            <span class="where">Left column · Calendar tab</span></article>
+          <article class="feat" id="life"><h3>Life stuff</h3>
+            <p>Goals, practice, clubs and makeup work, kept apart from homework.</p>
+            <span class="where">Left column · Life tab</span></article>
+          <article class="feat" id="quick-links"><h3>Quick links</h3>
+            <p>A link appears only when your work points to that site. Earned, never invented.</p>
+            <span class="where">Top bar</span></article>
+          <article class="feat" id="red-marks"><h3>Red marks</h3>
+            <p>A sign-in ran out or a site stopped answering — the fix is one click away.</p>
+            <span class="where">Top bar</span></article>
+          <article class="feat" id="date-source"><h3>Where a date came from</h3>
+            <p>A small marker on any date that was worked out rather than given. Nothing is guessed silently.</p>
+            <span class="where">Any row</span></article>
+          <article class="feat" id="estimates"><h3>Time estimates</h3>
+            <p>About how long each thing takes, and how much is due before tomorrow ends.</p>
+            <span class="where">Rows · the greeting</span></article>
+          <article class="feat" id="nothing-hidden"><h3>Nothing hidden</h3>
+            <p>The board always says how many items it has, and how many are folded away.</p>
+            <span class="where">Bottom of the board</span></article>
+          <article class="feat" id="tabs"><h3>As many tabs as you like</h3>
+            <p>Open it in several windows. They stay in step.</p>
+            <span class="where">Anywhere</span></article>
+        </div>
+      </section>
+
+      <section class="gsec" id="classes" data-title="Your classes">
+        <h2><svg class="gi"><use href="#g-class"/></svg>Your classes</h2>
+        <div class="feats">
+          <article class="feat" id="class-page"><h3>A page per class</h3>
+            <p>What's open, the grade, links and your notes, on one page.</p>
+            <span class="where">Click a class chip</span></article>
+          <article class="feat" id="grade-breakdown"><h3>Grade breakdown</h3>
+            <p>Every grade by category, and how much of your grade each one is worth.</p>
+            <span class="where">Class page</span></article>
+          <article class="feat" id="weights"><h3>Syllabus weights</h3>
+            <p>Canvas missing the weights? Type them in from the syllabus.</p>
+            <span class="where">Class page</span></article>
+          <article class="feat" id="materials"><h3>Materials, found for you</h3>
+            <p>Textbook, syllabus, the teacher's homework doc and the tools the class uses.</p>
+            <span class="where">Settings › Classes</span></article>
+          <article class="feat" id="textbooks"><h3>Find the textbook</h3>
+            <p>Search by title or ISBN. Free and borrowable copies are flagged.</p>
+            <span class="where">Settings › Textbooks</span></article>
+          <article class="feat" id="rename"><h3>Rename, recolour, reorder</h3>
+            <p>A short code, a colour and a period for every class.</p>
+            <span class="where">Settings › Classes</span></article>
+          <article class="feat" id="class-off"><h3>Switch a class off</h3>
+            <p>Gone from the board and the strip at once. Switch it back any time.</p>
+            <span class="where">Settings › Classes</span></article>
+          <article class="feat" id="learned"><h3>It learns each teacher</h3>
+            <p>How each teacher writes homework in their doc, so their work shows up with the right date.</p>
+            <span class="where">Setup · Settings › Classes</span></article>
+        </div>
+      </section>
+
+      <section class="gsec" id="ask" data-title="Ask">
+        <h2><svg class="gi"><use href="#g-ask"/></svg>Ask</h2>
+        <div class="feats">
+          <article class="feat" id="ask-space"><h3>Press Space and type</h3>
+            <p>The question is about whatever is open — a class, an assignment, or everything.</p>
+            <span class="where">The box at the bottom</span></article>
+          <article class="feat" id="add-by-saying"><h3>Add work by saying it</h3>
+            <p>“Add chem quiz Friday” adds it.</p>
+            <span class="where">The box at the bottom</span></article>
+          <article class="feat" id="teacher-said"><h3>Teacher said…</h3>
+            <p>Homework a teacher only said out loud, in one line.</p>
+            <span class="where">Button above the box</span></article>
+          <article class="feat" id="accelerate"><h3>Accelerate</h3>
+            <p>Turn a reading into a study guide.</p>
+            <span class="where">An open assignment</span></article>
+          <article class="feat" id="history"><h3>Chat history</h3>
+            <p>Your last thousand messages, searchable.</p>
+            <span class="where">History button in the chat</span></article>
+          <article class="feat" id="voice"><h3>Speak instead</h3>
+            <p>The mic button, where your Chrome supports it.</p>
+            <span class="where">Next to Send</span></article>
+        </div>
+      </section>
+
+      <section class="gsec" id="sources" data-title="What it reads">
+        <h2><svg class="gi"><use href="#g-sources"/></svg>What it reads</h2>
+        <div class="feats">
+          <article class="feat" id="canvas"><h3>Canvas</h3>
+            <p>Assignments, due dates, front-page homework, announcements and grades.</p>
+            <span class="where">Settings › Connections</span></article>
+          <article class="feat" id="docs"><h3>Teacher docs</h3>
+            <p>The homework teachers type into shared Google Docs.</p>
+            <span class="where">Found in setup</span></article>
+          <article class="feat" id="veracross"><h3>Veracross</h3>
+            <p>Your class schedule and your grades.</p>
+            <span class="where">Settings › Connections</span></article>
+          <article class="feat" id="apclassroom"><h3>AP Classroom</h3>
+            <p>Your assigned Progress Checks and due dates. Never the questions.</p>
+            <span class="where">Settings › Connections</span></article>
+          <article class="feat" id="albert"><h3>Albert.io</h3>
+            <p>Assigned practice sets and whether they're done.</p>
+            <span class="where">Settings › Connections</span></article>
+          <article class="feat" id="mail"><h3>School mail <span class="tag">coming</span></h3>
+            <p>School mail only, sorted by what it wants from you.</p>
+            <span class="where">Mail tab</span></article>
+          <article class="feat" id="off-means-off"><h3>Off means off</h3>
+            <p>Switch any source off and its items leave the board right away.</p>
+            <span class="where">Settings › Connections</span></article>
+          <article class="feat" id="shortcuts"><h3>Your own shortcuts</h3>
+            <p>Add Khan Academy, Quizlet or anything else to the top bar. Up to eight.</p>
+            <span class="where">Settings › Connections › Shortcuts</span></article>
+          <article class="feat" id="submit"><h3>Hand work in</h3>
+            <p>Send a file to a Canvas assignment without opening Canvas. Off until you switch it on.</p>
+            <span class="where">Settings › Connections › Handing work in</span>
+            <details><summary>How it stays safe</summary>
+              <p>It shows exactly what will be sent and asks every time — there's no “don't ask again”. It never retries on its own, and every attempt is written down.</p></details></article>
+        </div>
+        <p class="gnote">The full list, and exactly what is taken from each: <a href="supported.html">supported sites</a>.</p>
+      </section>
+
+      <section class="gsec" id="calendars" data-title="Calendars">
+        <h2><svg class="gi"><use href="#g-cal"/></svg>Calendars</h2>
+        <div class="feats">
+          <article class="feat" id="connect-cal"><h3>Bring your calendars in</h3>
+            <p>TeamSnap, Google Calendar, Schoology — anything with a calendar address.</p>
+            <span class="where">Settings › Connections › Calendars</span></article>
+          <article class="feat" id="guides"><h3>Step-by-step for each one</h3>
+            <p>Press a program's mark to get only its steps, and the page to start on.</p>
+            <span class="where">Settings › Connections › Connect something</span></article>
+          <article class="feat" id="personal"><h3>Games stay games</h3>
+            <p>Practices and games go in Personal — never ranked against homework.</p>
+            <span class="where">Life · Calendar</span></article>
+          <article class="feat" id="export"><h3>Put it in your calendar</h3>
+            <p>Download everything as one file for Google, Apple or your phone. Import again to update — no duplicates.</p>
+            <span class="where">Settings › Connections › Put this in your own calendar</span></article>
+        </div>
+      </section>
+
+      <section class="gsec" id="focus" data-title="Focus">
+        <h2><svg class="gi"><use href="#g-focus"/></svg>Focus</h2>
+        <div class="feats">
+          <article class="feat" id="focus-modes"><h3>Off, Reminder or Block</h3>
+            <p>Open a distracting site with homework left: a reminder slides in, or the page is covered.</p>
+            <span class="where">Settings › Focus</span></article>
+          <article class="feat" id="focus-pin"><h3>Your PIN</h3>
+            <p>Block mode lets you through with your PIN, for as long as you choose.</p>
+            <span class="where">Settings › Focus</span></article>
+          <article class="feat" id="focus-school"><h3>School sites are never blocked</h3>
+            <p>Canvas, Google Docs, AP Classroom and Albert.io always open.</p>
+            <span class="where">Built in</span></article>
+        </div>
+      </section>
+
+      <section class="gsec" id="yours" data-title="Make it yours">
+        <h2><svg class="gi"><use href="#g-yours"/></svg>Make it yours</h2>
+        <div class="feats">
+          <article class="feat" id="theme"><h3>Theme and accent</h3>
+            <p>Light, warm or dark, in any accent colour.</p>
+            <span class="where">Settings › Appearance</span></article>
+          <article class="feat" id="patterns"><h3>Background patterns</h3>
+            <p>Thirteen of them, some that move slowly. Or your own image, GIF or video.</p>
+            <span class="where">Settings › Appearance</span></article>
+          <article class="feat" id="type"><h3>Type and size</h3>
+            <p>Pick the fonts and the text size.</p>
+            <span class="where">Settings › Appearance</span></article>
+          <article class="feat" id="motion"><h3>Density and motion</h3>
+            <p>Compact or roomy. Five page transitions, or none.</p>
+            <span class="where">Settings › Appearance</span></article>
+          <article class="feat" id="formats"><h3>A format for every section</h3>
+            <p>Tick more than one and that section gets little tabs to flip between them.</p>
+            <span class="where">Settings › Main page</span></article>
+          <article class="feat" id="order"><h3>Order</h3>
+            <p>Grades lowest-first or A to Z; assignments smart, by date, by class or longest first.</p>
+            <span class="where">Settings › Main page</span></article>
+          <article class="feat" id="greeting"><h3>The greeting</h3>
+            <p>Your name, and which page the app opens on.</p>
+            <span class="where">Settings › Appearance</span></article>
+          <article class="feat" id="low-priority"><h3>Fold away small stuff</h3>
+            <p>Opt in, and the board says how many it's hiding.</p>
+            <span class="where">Settings › Appearance</span></article>
+          <article class="feat" id="strip-names"><h3>The tab strip</h3>
+            <p>Short codes or full names, and which tabs show.</p>
+            <span class="where">Settings › Appearance</span></article>
+        </div>
+      </section>
+
+      <section class="gsec" id="keys" data-title="Keys">
+        <h2><svg class="gi"><use href="#g-keys"/></svg>Keys</h2>
+        <div class="keygrid">
+          <span><kbd>Space</kbd>type to the chat</span>
+          <span><kbd>← →</kbd>previous / next tab</span>
+          <span><kbd>1–9</kbd>jump to a class</span>
+          <span><kbd>H</kbd>Home</span>
+          <span><kbd>A</kbd>Assignments</span>
+          <span><kbd>L</kbd>Life</span>
+          <span><kbd>C</kbd>Calendar</span>
+          <span><kbd>D</kbd>Done</span>
+          <span><kbd>S</kbd>Settings</span>
+          <span><kbd>R</kbd>refresh</span>
+          <span><kbd>Esc</kbd>back to Home</span>
+          <span><kbd>?</kbd>all the keys</span>
+        </div>
+      </section>
+
+      <section class="gsec" id="data" data-title="Your data">
+        <h2><svg class="gi"><use href="#g-data"/></svg>Your data</h2>
+        <div class="feats">
+          <article class="feat" id="local"><h3>It stays in your Chrome</h3>
+            <p>Everything it reads is kept on your computer. Nothing is uploaded to us.</p>
+            <span class="where"><a href="privacy.html">Privacy policy</a></span></article>
+          <article class="feat" id="no-passwords"><h3>No passwords</h3>
+            <p>It never asks for, stores or types a school password.</p>
+            <span class="where">Built in</span></article>
+          <article class="feat" id="backup"><h3>Automatic backup</h3>
+            <p>Backed up inside Chrome and put back by itself if anything goes missing. Download a copy any time.</p>
+            <span class="where">Settings › Connections › Always running</span></article>
+          <article class="feat" id="pinned"><h3>Always running</h3>
+            <p>Opens pinned when Chrome starts, and keeps your school sign-ins warm.</p>
+            <span class="where">Settings › Connections › Always running</span></article>
+          <article class="feat" id="updates"><h3>Updates itself</h3>
+            <p>Chrome installs new versions on its own.</p>
+            <span class="where">Settings › About</span></article>
+        </div>
+      </section>
+
+      <p class="gempty" id="empty" hidden>Nothing matches that. <button type="button" class="linkish" id="clear">Show everything</button></p>
+    </div>
+  </div>
+
+  <section class="tour-end">
+    <h2>See it for yourself.</h2>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/silly-bus-ai/nkglcihnfamdlmkiihoncmikndpmidpa">Add to Chrome <span class="arrow">→</span></a>
+      <a class="btn btn-ghost" href="tour.html">Take the tour <span class="arrow">→</span></a>
+    </div>
+  </section>
+
+  <footer>
+    <span>SillyBus AI · built by a student, for students</span>
+    <span><a href="tour.html">Tour</a> &nbsp;·&nbsp; <a href="supported.html">Supported sites</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="https://github.com/ElMagoCT/sillybusai-site/issues">Support</a></span>
+  </footer>
+</div>
+
+<script src="guide.js" defer></script>
+</body>
+</html>

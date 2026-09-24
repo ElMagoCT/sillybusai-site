@@ -9,6 +9,9 @@ Pages. Plain HTML and CSS — no build step, no dependencies.
 | `index.html` | Landing page. Deliberately light on words: a hero the bus drives into, a "five sources → one board" animation, three reasons, three steps with a bus that follows your scroll, and the pilot signup (a pre-filled GitHub issue, no email collection). |
 | `app.js` | The motion: scroll reveals, the convergence stage, the scroll-driven route, cursor-aware cards, sparkle bursts. Vanilla, ~150 lines, everything respects `prefers-reduced-motion`. |
 | `style.css` | Shared styling, light and dark. Fraunces for headings, Inter for everything else. |
+| `tour.html` + `tour.js` | The extension's seven-step tour on the web, over the real board screenshot: a dimmed sheet with one hole, the same card and the same words as `TOUR_STEPS` in the app's `app.js` — keep the two in step. A route of seven stops with the bus driving between them; ←/→, Space to play. Hole rectangles are percentages of `assets/img/shots/board-aurora.jpg`, so a new screenshot needs new numbers. |
+| `guide.html` + `guide.js` | Every feature and where to find it, as short cards in ten sections, with live search (`/` to focus, `?q=` links), one-section chips and an index that follows the scroll. Readable without JavaScript. Update it when a feature ships. |
+| `pages.css` | Styling for the tour and the guide only, on top of `style.css`. |
 | `404.html` | "Wrong stop." GitHub Pages serves it for missing paths. |
 | `assets/img/logo.svg` | The wide logo — bus with a **B** cut-out (was an F-like glyph before 2026-09-19), sparkle, gray-to-gold gradient. |
 | `assets/img/icon-square.svg` | Same mark with equal top/bottom padding — the source for every favicon/app-icon PNG in `assets/img/`. Regenerate with `qlmanage -t -s 1024` then `sips -z`. |
