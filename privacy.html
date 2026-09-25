@@ -23,15 +23,15 @@
 
 <h1>Privacy Policy</h1>
 <p class="lede">How this extension handles your school data.</p>
-<p class="updated">Last updated 22 September 2026 · applies to version 0.21.6 and later</p>
+<p class="updated">Last updated 24 September 2026 · applies to version 0.22 and later</p>
 
 <div class="card">
-  <p><b>The short version.</b> SillyBus AI runs entirely inside your own copy of
-  Chrome. Your assignments, grades and schedule are stored on your computer and
-  are never sent to us — we do not run a server that receives them, and we have
-  no way to see them. The only thing that ever leaves your machine is what you
-  personally ask the AI assistant, and that goes directly to Anthropic under an
-  API key you supply yourself.</p>
+  <p><b>The short version.</b> SillyBus AI runs inside your own copy of Chrome.
+  Your assignments, grades and schedule are stored on your computer and are never
+  sent to us. The only thing that ever leaves your machine is what you personally
+  ask the AI assistant. That goes to Anthropic — directly, under your own API key,
+  or through our server if you use a free SillyBus account for AI credits. Our
+  server forwards it and does not keep it.</p>
 </div>
 
 <h2>What the extension reads</h2>
@@ -58,8 +58,9 @@ session expires, the extension tells you to sign in yourself, in your own browse
 
 <h2>Where that information is stored</h2>
 <p>On your computer, in the storage that belongs to this extension inside your
-Chrome profile. Nothing is uploaded. There is no account to create, no server to
-sync with, and no copy held anywhere else.</p>
+Chrome profile. Nothing is uploaded, there is no server to sync with, and no copy
+is held anywhere else. (The optional SillyBus account, described below, holds only
+an email address and how many AI credits you have used.)</p>
 <p>Concretely, the extension writes to Chrome's IndexedDB storage (its database of
 assignments, its cache of the documents it has read, and its record of what you
 have ticked off) and to <code>chrome.storage.local</code> (your settings — your AI
@@ -118,8 +119,7 @@ Settings → Connections.</p>
 assignment, the due date, the exact file and its size, and whether you have
 already handed something in. There is deliberately no "don't ask again". A failed
 submission is never retried on its own. The file goes from your browser to your
-school's Canvas — it does not pass through us, because there is no server of ours
-for it to pass through.</p>
+school's Canvas — it never passes through us.</p>
 
 <h2>Focus</h2>
 <p>Focus is the optional setting that helps you get back to work. It is <b>off
@@ -138,10 +138,20 @@ blocked — Canvas, Docs, Drive, AP Classroom, Albert.io, your school's own doma
 and the Chrome Web Store are all refused if you try to add them.</p>
 
 <h2>The AI assistant</h2>
-<p>The assistant is <b>off unless you turn it on</b> by pasting your own Anthropic
-API key into the extension's Options page. If you never add a key, no part of your
-data is ever sent anywhere.</p>
-<p>If you do add a key:</p>
+<p>The assistant is <b>off unless you turn it on</b>, in one of two ways: sign in
+to a free SillyBus account for AI credits, or paste your own Anthropic API key
+into the extension's Options page. If you do neither, no part of your data is
+ever sent anywhere. If you do both, your own key is used.</p>
+<p>With a SillyBus account:</p>
+<ul>
+  <li>When you ask the assistant a question, your question and the relevant parts
+      of your assignments go to our server (<code>api.sillybusai.com</code>), which
+      checks your credit balance and forwards them to Anthropic, and passes the
+      answer back.</li>
+  <li>Our server <b>does not store</b> what you asked or what came back. It records
+      numbers only: how many credits the request used, token counts and the date.</li>
+</ul>
+<p>With your own key:</p>
 <ul>
   <li>The key is stored on your computer in <code>chrome.storage.local</code>. It
       is never sent anywhere except to Anthropic, and never to us.</li>
@@ -158,10 +168,10 @@ data is ever sent anywhere.</p>
 <ul>
   <li>No analytics, telemetry, crash reporting or usage tracking of any kind.</li>
   <li>No advertising, and no ad networks or trackers on this page.</li>
-  <li>No selling, renting or sharing of your data — there is nothing to sell,
-      because we never receive it.</li>
+  <li>No selling, renting or sharing of your data.</li>
   <li>No use of your school data to train any AI model.</li>
-  <li>No accounts, sign-ups or email collection to use the extension.</li>
+  <li>No account is needed to use the extension. An account is only for AI
+      credits.</li>
 </ul>
 
 <h2>Why the extension asks for each permission</h2>
@@ -216,19 +226,23 @@ because we hold no copy of anything.</p>
 
 <h2>Students and young people</h2>
 <p>This extension is built for students and shows a student their own schoolwork on
-their own computer. It collects no personal information, builds no profile of
-anyone, and sends nothing to us, so there is nothing for us to disclose about a
-user of any age.</p>
+their own computer. Without an account it collects no personal information and
+sends nothing to us. The optional account collects an email address, builds no
+profile, and is not intended for children under 13.</p>
 
-<h2>What is planned</h2>
-<p>The public launch will add optional accounts and paid plans. An account will
-hold an email address, a password (stored only as a hash) and which plan is
-active — and nothing about your schoolwork, which will keep living on your
-computer exactly as described above. On a paid plan the AI assistant will run on a
-key we provide instead of one you paste in, so the questions you ask it will pass
-through a metering step we operate before reaching Anthropic. None of this is in
-the current version; this page will be rewritten before the version that adds it
-is published.</p>
+<h2>Your SillyBus account</h2>
+<p>The account is optional and <b>only for AI credits</b> in the extension. You can
+create it with Google or with an email and password. It holds:</p>
+<ul>
+  <li>your email address, and your Google account's ID if you signed in with
+      Google (we receive nothing else from Google — no contacts, no Drive, no mail);</li>
+  <li>a salted hash of your password and recovery code, if you chose email;</li>
+  <li>your plan, any bonus credits, and how many credits you have used this month.</li>
+</ul>
+<p>It never holds your homework, grades, schedule or anything the extension reads.
+Every plan is free while payments are inactive, and no payment details are
+collected. You can delete the account, and its usage record, at any time from
+<a href="account.html">your account page</a>.</p>
 
 <h2>Changes to this policy</h2>
 <p>If the extension's handling of data changes — in particular if a future version
@@ -240,7 +254,7 @@ version is published, and the date at the top will change to say so.</p>
 at <a href="https://github.com/ElMagoCT/sillybusai-site/issues">github.com/ElMagoCT/sillybusai-site/issues</a>.</p>
 
 <footer class="site">
-  <a href="./">SillyBus AI</a> · Privacy Policy · last updated 22 September 2026
+  <a href="./">SillyBus AI</a> · Privacy Policy · last updated 24 September 2026
 </footer>
 
 </div>
