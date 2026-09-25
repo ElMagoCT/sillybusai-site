@@ -15,7 +15,12 @@
  */
 "use strict";
 (() => {
-  const API = /^(localhost|127\.0\.0\.1)$/.test(location.hostname) ? "http://localhost:8899" : "https://api.sillybusai.com";
+  /* api.sillybusai.com is the address; sillybus-accounts.netlify.app is the
+     same server under Netlify's own name, used if the subdomain cannot be
+     reached (before its DNS exists, or while its certificate is being made). */
+  const LOCAL = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+  const BASES = LOCAL ? ["http://localhost:8899"] : ["https://api.sillybusai.com", "https://sillybus-accounts.netlify.app"];
+  let API = BASES[0];
   const STORE_EXT = "nkglcihnfamdlmkiihoncmikndpmidpa";
   const params = new URLSearchParams(location.search);
   const EXT = /^[a-p]{32}$/.test(params.get("ext") || "") ? params.get("ext") : STORE_EXT;
@@ -35,11 +40,19 @@
   let clientId = "";
 
   async function api(path, { method = "GET", body, auth } = {}) {
-    const res = await fetch(`${API}/api/${path}`, {
+    const init = {
       method, cache: "no-store",
       headers: { ...(body ? { "content-type": "application/json" } : {}), ...(auth ? { authorization: `Bearer ${auth}` } : {}) },
       ...(body ? { body: JSON.stringify(body) } : {}),
-    });
+    };
+    let res;
+    try { res = await fetch(`${API}/api/${path}`, init); }
+    catch (err) {                     // unreachable host, not an HTTP error
+      const next = BASES[BASES.indexOf(API) + 1];
+      if (!next) throw new Error("SillyBus AI's server can't be reached right now");
+      API = next;
+      res = await fetch(`${API}/api/${path}`, init);
+    }
     let data = {};
     try { data = await res.json(); } catch (e) { /* empty */ }
     if (!res.ok) { const err = new Error(data.message || `HTTP ${res.status}`); err.status = res.status; throw err; }
