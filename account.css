@@ -1,0 +1,52 @@
+/* The account page. Built from the site's own tokens (style.css). */
+.acct-card[hidden], #account[hidden], #auth[hidden], .acct-ext[hidden] { display: none !important; }
+.acct-card { background: var(--panel); border: 1px solid var(--rule); border-radius: 18px; padding: 1.4rem; box-shadow: var(--shadow); margin: 0 0 1rem; animation: acct-in .5s var(--ease) both; }
+@keyframes acct-in { from { opacity: 0; transform: translateY(8px); } }
+.google-slot { min-height: 44px; display: flex; justify-content: center; }
+.google-slot[hidden] { display: none; }
+.acct-note { color: var(--muted); font-size: .88rem; margin: .5rem 0 0; min-height: 0; }
+.acct-note:empty { display: none; }
+.acct-note.bad { color: #b3372b; }
+#email-way { margin-top: 1rem; border-top: 1px solid var(--rule); padding-top: .9rem; }
+#email-way summary { cursor: pointer; color: var(--muted); font-size: .92rem; text-align: center; list-style: none; }
+#email-way summary::-webkit-details-marker { display: none; }
+#email-way[open] summary { margin-bottom: .8rem; }
+#auth-form { display: grid; gap: .6rem; }
+.acct-tabs { display: flex; gap: .3rem; justify-content: center; }
+.acct-tabs button { font: 500 .85rem var(--body); background: none; border: 1px solid transparent; border-radius: 99px; padding: .35rem .8rem; color: var(--muted); cursor: pointer; }
+.acct-tabs button[aria-selected="true"] { color: var(--ink); border-color: var(--rule); background: var(--bg); }
+.acct-card input, .acct-danger input { font: inherit; color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 12px; padding: .75rem .9rem; width: 100%; }
+.acct-card input:focus, .acct-danger input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent); }
+#auth-form .btn { justify-content: center; }
+.acct-row { display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; margin-top: .8rem; }
+.acct-row input { flex: 1 1 200px; width: auto; }
+.acct-recovery code { display: block; font-size: 1.2rem; letter-spacing: .05em; margin: .7rem 0 0; word-break: break-all; }
+.acct-head { display: flex; justify-content: space-between; align-items: center; gap: .6rem; margin-bottom: .8rem; }
+.acct-label { font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.acct-pill { font-size: .78rem; font-weight: 600; background: var(--accent-soft); color: var(--accent); border-radius: 99px; padding: .25rem .6rem; }
+.acct-flag { font-size: .7rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); border: 1px dashed var(--faint); border-radius: 99px; padding: .3rem .65rem; }
+.acct-balance { display: flex; align-items: baseline; gap: .6rem; color: var(--muted); }
+.acct-balance span:first-child { font: 600 clamp(2.6rem, 8vw, 3.6rem)/1 var(--head); letter-spacing: -.03em; color: var(--ink); font-variant-numeric: tabular-nums; }
+.acct-meter { height: 10px; border-radius: 99px; background: var(--bg); border: 1px solid var(--rule); overflow: hidden; margin: 1rem 0 .2rem; }
+.acct-meter i { display: block; height: 100%; width: 0; border-radius: inherit; background: linear-gradient(90deg, var(--gold), var(--gold-deep)); transition: width .9s var(--ease); }
+.acct-meter.low i { background: #b3372b; }
+.acct-plans { display: grid; gap: .7rem; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+.acct-plan { border: 1px solid var(--rule); border-radius: 14px; padding: 1rem; display: flex; flex-direction: column; gap: .35rem; }
+.acct-plan.on { border-color: var(--gold); box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 18%, transparent); }
+.acct-plan-name { font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+.acct-plan-name span { font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); }
+.acct-price { display: flex; align-items: baseline; gap: .5rem; }
+.acct-price b { font: 600 1.5rem/1 var(--head); }
+.acct-price s { color: var(--faint); font-size: .85rem; }
+.acct-plan .btn { margin-top: auto; justify-content: center; padding: .5rem .8rem; font-size: .85rem; }
+.acct-off { opacity: .45; filter: grayscale(1); pointer-events: none; }
+.acct-ext { display: flex; align-items: center; justify-content: space-between; gap: 1rem; border-color: color-mix(in srgb, var(--gold) 50%, var(--rule)); background: var(--accent-soft); }
+.acct-ext p { margin: .2rem 0 0; }
+.acct-danger { margin: 1.5rem 0 0; color: var(--muted); font-size: .9rem; }
+.acct-danger summary { cursor: pointer; }
+.acct-who { font-size: .88rem; color: var(--muted); }
+.linkish { background: none; border: 0; padding: 0; font: inherit; color: var(--accent); cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+.acct-toast { position: fixed; left: 50%; bottom: 20px; transform: translate(-50%, 16px); opacity: 0; background: var(--ink); color: var(--bg); padding: .6rem 1rem; border-radius: 10px; font-size: .9rem; transition: all .25s var(--ease); pointer-events: none; max-width: calc(100vw - 32px); }
+.acct-toast.show { opacity: 1; transform: translate(-50%, 0); }
+@media (prefers-reduced-motion: reduce) { .acct-card { animation: none; } .acct-meter i, .acct-toast { transition: none; } }
+@media (max-width: 560px) { .acct-ext { flex-direction: column; align-items: stretch; } .acct-who #who-email { display: none; } }
