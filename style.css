@@ -582,3 +582,93 @@ footer a:hover { color: var(--ink); }
 .doc th, .doc td { text-align: left; padding: .55rem .6rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
 .doc th { color: var(--muted); font-weight: 600; }
 .doc code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .88em; background: var(--accent-soft); padding: .12em .35em; border-radius: 4px; }
+
+/* ---------- download: the Mac app and the extension ----------
+   Shared by the homepage (#what, #get) and download.html. Nothing here
+   depends on app.js, so download.html loads without it. */
+.btn .dl { flex: none; }
+.btn-big { padding: 1.05rem 1.8rem; font-size: 1.08rem; gap: .65rem; }
+.btn-big .dl { width: 22px; height: 22px; }
+.dl-note { color: var(--faint); font-size: .86rem; margin: .75rem 0 0; }
+.dl-note a { color: var(--muted); }
+
+.what { padding: 1rem 0 5rem; }
+.what-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(15.5rem, 1fr)); gap: 1rem; }
+.what-card {
+  background: var(--panel); border: 1px solid var(--rule); border-radius: 20px; padding: 1.25rem 1.3rem;
+  box-shadow: var(--shadow); transition: transform .35s var(--ease), border-color .3s;
+}
+.what-card:hover { transform: translateY(-3px); border-color: color-mix(in oklab, var(--gold) 45%, var(--rule)); }
+.what-card .wi { width: 38px; height: 38px; border-radius: 11px; display: grid; place-items: center; background: var(--accent-soft); color: var(--gold-deep); }
+@media (prefers-color-scheme: dark) { .what-card .wi { color: var(--accent); } }
+.what-card .wi svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.what-card h3 { font-size: 1.3rem; margin: .9rem 0 .3rem; }
+.what-card p { margin: 0; color: var(--muted); font-size: .94rem; }
+.what-card .where { display: inline-block; margin-top: .7rem; font: 600 .68rem/1 var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--faint); }
+
+.get { padding: 1rem 0 5rem; }
+.get-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 1rem; align-items: stretch; }
+.get-card {
+  background: var(--panel); border: 1px solid var(--rule); border-radius: 22px; padding: 1.6rem;
+  box-shadow: var(--shadow); display: flex; flex-direction: column; gap: .2rem;
+}
+.get-card.mac { border-color: color-mix(in oklab, var(--gold) 60%, var(--rule)); background: linear-gradient(180deg, color-mix(in oklab, var(--gold) 9%, var(--panel)), var(--panel) 65%); }
+.get-card .kind { font: 600 .74rem/1 var(--body); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.get-card h3 { font-size: 1.7rem; margin: .5rem 0 .4rem; }
+.get-card > p { color: var(--muted); margin: 0 0 1.1rem; }
+.get-card .cta-row { margin-top: auto; justify-content: flex-start; }
+.mini-steps { list-style: none; counter-reset: ms; margin: 0 0 1.3rem; padding: 0; display: grid; gap: .55rem; }
+.mini-steps li { counter-increment: ms; display: grid; grid-template-columns: 1.7rem 1fr; gap: .5rem; align-items: baseline; font-size: .95rem; color: var(--muted); }
+.mini-steps li::before { content: counter(ms); width: 1.5rem; height: 1.5rem; border-radius: 99px; display: grid; place-items: center; font: 600 .76rem/1 var(--body); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); }
+.mini-steps b { color: var(--ink); font-weight: 600; }
+.ask-us { text-align: center; color: var(--muted); margin: 2rem 0 0; font-size: 1rem; }
+.ask-us a { color: var(--accent); font-weight: 600; text-decoration: none; border-bottom: 1px solid color-mix(in oklab, var(--accent) 40%, transparent); }
+.ask-us a:hover { border-bottom-color: var(--accent); }
+@media (max-width: 760px) { .get-grid { grid-template-columns: 1fr; } }
+
+/* download.html */
+.dl-hero { padding: 2.5rem 0 1rem; }
+.dl-hero .cta-row { justify-content: flex-start; margin-top: 1.8rem; }
+.dl-steps { list-style: none; counter-reset: ds; margin: 3rem 0 0; padding: 0; display: grid; gap: 1rem; }
+.dl-step {
+  counter-increment: ds; display: grid; grid-template-columns: 1fr minmax(14rem, 19rem); gap: 1.5rem; align-items: center;
+  background: var(--panel); border: 1px solid var(--rule); border-radius: 22px; padding: 1.5rem; box-shadow: var(--shadow);
+}
+.dl-step h2 { font-size: 1.55rem; }
+.dl-step h2::before { content: counter(ds, decimal-leading-zero); display: block; font: 600 .72rem/1 var(--body); letter-spacing: .1em; color: var(--faint); margin-bottom: .55rem; }
+.dl-step p { color: var(--muted); margin: .6rem 0 0; }
+.dl-step p b { color: var(--ink); }
+.dl-step .path { font-weight: 600; color: var(--ink); white-space: nowrap; }
+.why {
+  margin: 1rem 0 0; padding: .9rem 1rem; border-radius: 14px; background: var(--accent-soft);
+  font-size: .93rem; color: var(--muted);
+}
+.why b { color: var(--ink); display: block; margin-bottom: .15rem; }
+.mock { border: 1px solid var(--rule); border-radius: 14px; background: var(--bg); padding: 1rem; font-size: .82rem; color: var(--muted); }
+.mock-drag { display: flex; align-items: center; justify-content: space-around; gap: .5rem; min-height: 8.5rem; }
+.mock-drag figure { margin: 0; display: grid; justify-items: center; gap: .4rem; text-align: center; }
+.mock-drag img, .mock-drag svg.folder { width: 64px; height: 64px; }
+.mock-drag img { border-radius: 14px; box-shadow: var(--shadow); }
+.mock-drag .arrow-go { width: 46px; height: 20px; fill: none; stroke: var(--gold); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.mock-file { display: grid; justify-items: center; gap: .5rem; min-height: 8.5rem; align-content: center; }
+.mock-file .file { width: 52px; height: 62px; border-radius: 6px 16px 6px 6px; background: var(--panel); border: 1px solid var(--rule); display: grid; place-items: end center; padding-bottom: .4rem; font: 700 .62rem/1 var(--body); letter-spacing: .06em; color: var(--faint); box-shadow: var(--shadow); }
+.mock-set .row { display: flex; align-items: center; justify-content: space-between; gap: .7rem; padding-top: .7rem; border-top: 1px solid var(--rule); }
+.mock-set .crumb { font: 600 .68rem/1 var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--faint); margin-bottom: .7rem; }
+.mock-set .row span { color: var(--ink); line-height: 1.35; }
+.mock-set .fake-btn {
+  flex: none; font: 600 .78rem/1 var(--body); padding: .5rem .75rem; border-radius: 8px; background: var(--panel);
+  border: 1px solid var(--rule); color: var(--ink); position: relative;
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--gold) 45%, transparent);
+}
+.mock-ready { display: grid; justify-items: center; gap: .6rem; min-height: 8.5rem; align-content: center; }
+.mock-ready .bar { width: 80%; height: 6px; border-radius: 99px; background: var(--rule); overflow: hidden; }
+.mock-ready .bar i { display: block; height: 100%; width: 70%; border-radius: inherit; background: var(--gold); animation: fill-up 2.4s var(--ease) infinite; }
+@keyframes fill-up { from { width: 8%; } to { width: 100%; } }
+.dl-chrome { margin: 1rem 0 0; display: flex; align-items: center; justify-content: space-between; gap: 1rem 1.5rem; flex-wrap: wrap;
+  border: 1px dashed var(--rule); border-radius: 22px; padding: 1.4rem 1.5rem; }
+.dl-chrome h2 { font-size: 1.4rem; }
+.dl-chrome p { color: var(--muted); margin: .35rem 0 0; max-width: 34rem; }
+@media (max-width: 760px) {
+  .dl-step { grid-template-columns: 1fr; gap: 1.1rem; padding: 1.25rem; }
+  .btn-big { width: 100%; justify-content: center; }
+}
