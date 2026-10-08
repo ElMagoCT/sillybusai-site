@@ -23,225 +23,36 @@
 </nav>
 
 <h1>Privacy Policy</h1>
-<p class="lede">How this extension handles your school data.</p>
-<p class="updated">Last updated 22 September 2026 · applies to version 0.21.6 and later</p>
-
-<div class="card">
-  <p><b>The short version.</b> SillyBus AI runs entirely inside your own copy of
-  Chrome. Your assignments, grades and schedule are stored on your computer and
-  are never sent to us — we do not run a server that receives them, and we have
-  no way to see them. The only thing that ever leaves your machine is what you
-  personally ask the AI assistant, and that goes directly to Anthropic under an
-  API key you supply yourself.</p>
-</div>
-
-<h2>What the extension reads</h2>
-<p>When you press Refresh, the extension reads, using the sign-ins your Chrome
-already has:</p>
-<ul>
-  <li><b>Your school's Canvas</b> — your courses, assignments, due dates and grades.</li>
-  <li><b>Your school's Veracross portal</b> — your class schedule and grades.</li>
-  <li><b>Documents your teachers have shared with you</b> on Google Docs, such as
-      syllabi and weekly plans, so that work assigned in a document shows up
-      alongside work assigned in Canvas.</li>
-  <li><b>AP Classroom</b>, if you use it — your AP assignments and progress checks,
-      read while you have that site open. See below.</li>
-  <li><b>Albert.io</b>, if your class uses it — your assigned practice sets, due
-      dates and completion status, read while you have that site open. See below.</li>
-  <li><b>Your school mail</b>, and only your school mail — read from Gmail, with
-      most of your mailbox thrown away before anything is stored. See below.</li>
-  <li><b>AP Central</b> — the Course and Exam Description your AP subject
-      publishes publicly. No sign-in; it is a public document.</li>
-</ul>
-<p>It reads these as you, with the browser session you already have. It never asks
-for or stores your school password, and it never signs in on your behalf. If a
-session expires, the extension tells you to sign in yourself, in your own browser.</p>
-
-<h2>Where that information is stored</h2>
-<p>On your computer, in the storage that belongs to this extension inside your
-Chrome profile. Nothing is uploaded. There is no account to create, no server to
-sync with, and no copy held anywhere else.</p>
-<p>Concretely, the extension writes to Chrome's IndexedDB storage (its database of
-assignments, its cache of the documents it has read, and its record of what you
-have ticked off) and to <code>chrome.storage.local</code> (your settings — your AI
-key and your class schedule feed address).</p>
-
-<h2>AP Classroom</h2>
-<p>AP Classroom does not accept the ordinary browser sign-in the extension uses
-elsewhere: it authorises each request with a token held by the page itself. So the
-extension reads your AP assignments a different way — a small script runs on
-<code>apclassroom.collegeboard.org</code> while you have that page open, collects
-the assignments listed there, and passes the extension the title, subject, due date,
-status and link for each one.</p>
-<p>That token stays on College Board's own site. It is never copied, stored, or
-handed to any other part of the extension, and nothing about your AP Classroom
-account leaves your computer. The script runs only on that domain and does nothing
-on any other page.</p>
-
-<h2>Albert.io</h2>
-<p>Albert.io works the same way, for the same reason: a small script runs on
-<code>www.albert.io</code> while you have that page open and reads only what is
-assigned, when it is due, how many questions remain, and whether it's finished —
-never the questions themselves, their answer choices, or explanations. That is a
-deliberate limit, not a missing feature: pulling graded question content into this
-app, or from there into the AI assistant, would be doing the assignment rather than
-helping you plan around it, and it will not be changed to do that.</p>
-<p>Albert.io authorizes each request with your existing sign-in cookie for that
-site. The extension never reads that cookie's value, never stores it, and never
-sends it anywhere — the browser sends it directly to Albert.io the same way it
-would if you were browsing the site yourself.</p>
-
-<h2>Your school mail</h2>
-<p>The Mail page reads your Gmail through the Atom feed Google has served since
-2004, using the sign-in your Chrome already has. There is no OAuth grant and no
-Google Cloud project, which also means there is nothing here for a school
-administrator to switch off. It reads <b>unread mail only</b>, about twenty
-messages at a time, and a preview of each rather than the whole message.</p>
-<p><b>Most of your mail is discarded before it is stored.</b> A message is kept
-only if it comes from your school's domain, or names one of your classes, or
-names a piece of your work together with a day. Everything else — a shipping
-notice, a personal thread, a newsletter — is dropped inside your browser, in the
-same code that fetched it. It is never written to disk, never reaches the app,
-and never reaches the AI.</p>
-<p><b>The AI is never handed your mailbox.</b> Nothing goes to Anthropic until
-you press the button on one message, and then it is that one message. The
-question is typed into the visible chat box first, so you can read exactly what
-is being sent before it goes.</p>
-<p><b>Nothing is ever sent, deleted, archived or labelled.</b> Every request the
-extension makes to Gmail is a read. Replying opens an ordinary Gmail draft with
-the reply already in it, and you press Send yourself.</p>
-
-<h2>Handing work in to Canvas</h2>
-<p>The extension can upload a file you have attached to an assignment straight to
-Canvas. It <b>ships switched off</b> and does nothing until you turn it on in
-Settings → Connections.</p>
-<p>With it on, it still asks you every single time, showing the class, the
-assignment, the due date, the exact file and its size, and whether you have
-already handed something in. There is deliberately no "don't ask again". A failed
-submission is never retried on its own. The file goes from your browser to your
-school's Canvas — it does not pass through us, because there is no server of ours
-for it to pass through.</p>
-
-<h2>Focus</h2>
-<p>Focus is the optional setting that helps you get back to work. It is <b>off
-unless you turn it on</b>, and while it is off the extension holds no permission
-for any site outside the ones listed above and runs no code on one.</p>
-<p>When you turn it on, Chrome asks your permission for the sites <b>you</b> put
-on your list, and only those. On one of them the extension does exactly one
-thing: it shows a reminder of what you have due, or covers the page until you
-type your bypass PIN. It does not read the page, the video, the posts, or your
-search or watch history, and it records nothing about the visit. Switching Focus
-off hands those permissions back to Chrome.</p>
-<p>What Focus keeps, all inside your own Chrome: your mode, your site list, and
-your bypass PIN stored as a hash rather than as the PIN itself. No list of the
-sites you visit is built, kept or sent anywhere. Your schoolwork cannot be
-blocked — Canvas, Docs, Drive, AP Classroom, Albert.io, your school's own domains
-and the Chrome Web Store are all refused if you try to add them.</p>
-
-<h2>The AI assistant</h2>
-<p>The assistant is <b>off unless you turn it on</b> by pasting your own Anthropic
-API key into the extension's Options page. If you never add a key, no part of your
-data is ever sent anywhere.</p>
-<p>If you do add a key:</p>
-<ul>
-  <li>The key is stored on your computer in <code>chrome.storage.local</code>. It
-      is never sent anywhere except to Anthropic, and never to us.</li>
-  <li>When you ask the assistant a question, your question and the relevant parts
-      of your assignments — the ones needed to answer it — are sent to Anthropic's
-      API at <code>api.anthropic.com</code>, billed to your own Anthropic account.
-      Their handling of that data is covered by
-      <a href="https://www.anthropic.com/legal/privacy">Anthropic's privacy policy</a>.</li>
-  <li>Many questions are answered by the extension itself, from data already on
-      your machine, and those never reach the model at all.</li>
-</ul>
-
-<h2>What we do not do</h2>
-<ul>
-  <li>No analytics, telemetry, crash reporting or usage tracking of any kind.</li>
-  <li>No advertising, and no ad networks or trackers on this page.</li>
-  <li>No selling, renting or sharing of your data — there is nothing to sell,
-      because we never receive it.</li>
-  <li>No use of your school data to train any AI model.</li>
-  <li>No accounts, sign-ups or email collection to use the extension.</li>
-</ul>
-
-<h2>Why the extension asks for each permission</h2>
-<table>
-  <tr><th>Permission</th><th>What it is for</th></tr>
-  <tr><td><code>storage</code></td>
-      <td>To save your settings — your AI key and your class schedule address — so
-          you do not re-enter them on every visit.</td></tr>
-  <tr><td><code>unlimitedStorage</code></td>
-      <td>So Chrome never evicts your board, your class settings or the backup copy
-          of them when disk space runs low.</td></tr>
-  <tr><td><code>scripting</code></td>
-      <td>To run the small reader scripts on AP Classroom and Albert.io described
-          above, and to register the Focus reminder on sites you have chosen. It is
-          used for those and nothing else.</td></tr>
-  <tr><td><code>*.instructure.com</code></td>
-      <td>To read your courses, assignments and grades from Canvas. Canvas gives
-          each school its own address, so the exact one is not known in advance.</td></tr>
-  <tr><td><code>*.veracross.com</code></td>
-      <td>To read your class schedule and grades from your school's Veracross portal.</td></tr>
-  <tr><td><code>docs.google.com</code></td>
-      <td>To read the syllabus and planning documents your teachers have already
-          shared with you, so work assigned in a document is not missed.</td></tr>
-  <tr><td><code>apclassroom.collegeboard.org</code><br>
-          <code>apc-api-production.collegeboard.org</code></td>
-      <td>To read your AP assignments and progress checks from AP Classroom, as
-          described above.</td></tr>
-  <tr><td><code>www.albert.io</code><br><code>api.albert.io</code></td>
-      <td>To read your assigned Albert.io practice sets and due dates, as
-          described above.</td></tr>
-  <tr><td><code>drive.google.com</code></td>
-      <td>To open the handouts and PDFs those documents link to.</td></tr>
-  <tr><td><code>mail.google.com</code></td>
-      <td>To read your school mail, filtered as described above. Read only —
-          nothing is ever sent, deleted or changed.</td></tr>
-  <tr><td><code>apcentral.collegeboard.org</code></td>
-      <td>To download the public Course and Exam Description for an AP subject
-          once, so a study guide follows the real unit framework.</td></tr>
-  <tr><td><code>api.anthropic.com</code></td>
-      <td>To send your questions to the AI assistant, only when you have added your
-          own API key.</td></tr>
-  <tr><td>Optional site access<br><code>*://*/*</code></td>
-      <td>Only for Focus, and only the sites you put on your own list. Nothing is
-          requested while Focus is off, and turning it off gives the access back.
-          This is why Chrome shows it as optional rather than required.</td></tr>
-</table>
-
-<h2>Deleting your data</h2>
-<p>Removing the extension from Chrome deletes everything it has stored, including
-your settings and your API key. There is no separate deletion request to make,
-because we hold no copy of anything.</p>
-
-<h2>Students and young people</h2>
-<p>This extension is built for students and shows a student their own schoolwork on
-their own computer. It collects no personal information, builds no profile of
-anyone, and sends nothing to us, so there is nothing for us to disclose about a
-user of any age.</p>
-
-<h2>What is planned</h2>
-<p>The public launch will add optional accounts and paid plans. An account will
-hold an email address, a password (stored only as a hash) and which plan is
-active — and nothing about your schoolwork, which will keep living on your
-computer exactly as described above. On a paid plan the AI assistant will run on a
-key we provide instead of one you paste in, so the questions you ask it will pass
-through a metering step we operate before reaching Anthropic. None of this is in
-the current version; this page will be rewritten before the version that adds it
-is published.</p>
-
-<h2>Changes to this policy</h2>
-<p>If the extension's handling of data changes — in particular if a future version
-sends anything to a server we operate — this page will be updated before that
-version is published, and the date at the top will change to say so.</p>
-
+<p class="lede">How SillyBus AI handles schoolwork, chat and connected calendars.</p>
+<p class="updated">Last updated 8 October 2026 · applies to version 0.23.3.0</p>
+<h2>What stays on your computer</h2>
+<p>Your assignments, grades, schedule, class profiles, personal tasks, saved conversations and explicitly requested chat memories are stored in the extension’s own Chrome profile storage. An automatic backup is stored in the same profile. The dashboard does not continuously upload this database. Relevant excerpts can be sent for AI features as described below.</p>
+<h2>School sources</h2>
+<p>The extension reads your Canvas courses and schoolwork, Veracross schedule and grades, teacher Google Docs and Drive files, AP Classroom and Albert.io assignments, and public College Board course documents. It uses the sign-ins already held by Chrome. It does not ask for, store or type school passwords. It does not read Gmail; Better Gmail is a separate extension.</p>
+<h2>AI requests and learning classes</h2>
+<p>SillyBus’s hosted AI service sends questions and relevant context through better-gmail-api.jomonkey22.workers.dev on Cloudflare to Anthropic. Context can include assignment text, class materials, attached photos, recent messages in the conversation you resume and saved memories. Learning how to read a class’s materials can also send those materials to this service. The service stores an installation identifier, account email when signed in, first-use dates, usage costs and subscription status; it is designed not to store the submitted prompt or response content. If you provide your own Anthropic API key, direct AI requests use api.anthropic.com and that key stays in local extension storage. Anthropic handles requests under its own privacy policy: https://www.anthropic.com/legal/privacy.</p>
+<h2>Chat memory</h2>
+<p>Only preferences you explicitly ask SillyBus to remember are saved as memories. You can inspect and remove them in the Memory drawer or with chat memory commands. Recent turns from a resumed conversation and bounded saved memories may accompany an AI request. Removing a memory stops its use in later requests; it does not recall a request already transmitted.</p>
+<h2>Calendars and Link this page</h2>
+<p>After you click the toolbar icon and choose Link this page, the extension reads that tab to discover a calendar or save homework, an event, a task or a class link. Calendar access is requested for that calendar’s origin. Google Calendar uses its export with your existing Chrome sign-in and can refresh periodically while Chrome runs. TeamSnap calendar feed addresses are stored locally and sent to their calendar host. Treat calendar feed addresses as private.</p>
+<h2>Optional Mac pairing</h2>
+<p>You can explicitly pair the extension with your own local SillyBus Mac app. Pairing requests access to that local app. Linked Google Calendar exports and TeamSnap calendar feed information can then be sent from Chrome to your paired Mac and kept there. Pairing is optional; it does not send calendars to another user or to the developer.</p>
+<h2>Optional Focus reminders</h2>
+<p>Focus is off unless you enable it. Chrome requests access only for sites you select. On those sites the extension displays your homework reminder or a gate requiring your bypass PIN. It does not read posts, media or browsing history. The PIN is stored as a PBKDF2 hash. Turning Focus off relinquishes its permissions.</p>
+<h2>Accounts and payment</h2>
+<p>Optional SillyBus accounts use the account service to manage sign-in and subscription access. Account information includes your email and authentication records. AI usage and plan options are shown in Settings. Payments are handled by Stripe; card details go to Stripe and SillyBus does not receive your card number. Subscription status is associated with your account. Stripe privacy policy: https://stripe.com/privacy.</p>
+<h2>Permissions and other requests</h2>
+<p>storage and unlimitedStorage keep settings, database and backups locally. scripting runs bundled school readers, the user-initiated current-tab link reader and Focus reminders. activeTab grants access for your toolbar action. alarms schedules calendar refresh and synchronization. Required school hosts serve the sources above; optional site access is requested for selected Focus sites, calendars and local Mac pairing. The dashboard may request Canvas and Veracross pages periodically to check sign-in state. Google Fonts requests disclose your IP address to Google but do not carry your school data. Optional autostart opens the extension’s own dashboard.</p>
+<h2>Canvas submissions</h2>
+<p>The optional Canvas upload feature ships off. If enabled, it asks for confirmation for each submission, showing the assignment and selected file. The file goes to your school’s Canvas. Failed submissions are not automatically retried.</p>
+<h2>Data use and removal</h2>
+<p>Data is used to provide your schoolwork dashboard and its related assistance, not advertising or credit decisions. The extension does not collect browsing history or sell your data. It has no behavioral analytics or crash telemetry. Hosted usage records exist for access limits and billing. You can export a local backup from Options. Removing the extension removes its local Chrome data; copies exported or sent to your paired Mac remain until you remove them. Account or service-held record questions can be sent to info@sillybusai.com.</p>
+<h2>Students and changes</h2>
+<p>SillyBus is designed for high-school students. Questions and class materials used with AI may contain personal information, as described above. This policy will be updated when data handling changes.</p>
 <h2>Contact</h2>
-<p>Questions about this policy, or about anything the extension does, can be raised
-at <a href="https://github.com/ElMagoCT/sillybusai-site/issues">github.com/ElMagoCT/sillybusai-site/issues</a>.</p>
-
+<p>Email info@sillybusai.com for privacy questions. Automatic account emails may come from no.response@sillybusai.com; use info@ for replies.</p>
 <footer class="site">
-  <a href="./">SillyBus AI</a> · Privacy Policy · last updated 22 September 2026
+  <a href="./">SillyBus AI</a> · Privacy Policy · last updated 8 October 2026
 </footer>
 
 </div>
