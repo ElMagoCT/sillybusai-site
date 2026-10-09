@@ -24,25 +24,27 @@
 
 <h1>Privacy Policy</h1>
 <p class="lede">How SillyBus AI handles schoolwork, chat and connected calendars.</p>
-<p class="updated">Last updated 8 October 2026 · applies to version 0.23.3.0</p>
+<p class="updated">Last updated 9 October 2026 · applies to version 0.23.7.0</p>
 <h2>What stays on your computer</h2>
 <p>Your assignments, grades, schedule, class profiles, personal tasks, saved conversations and explicitly requested chat memories are stored in the extension’s own Chrome profile storage. An automatic backup is stored in the same profile. The dashboard does not continuously upload this database. Relevant excerpts can be sent for AI features as described below.</p>
 <h2>School sources</h2>
-<p>The extension reads your Canvas courses and schoolwork, Veracross schedule and grades, teacher Google Docs and Drive files, AP Classroom and Albert.io assignments, and public College Board course documents. It uses the sign-ins already held by Chrome. It does not ask for, store or type school passwords. It does not read Gmail; Better Gmail is a separate extension.</p>
+<p>The extension reads your Canvas courses and schoolwork, Veracross schedule and grades, teacher Google Docs and Drive files, AP Classroom and Albert.io assignments, visible coursework on explicitly linked Google Classroom pages, and public College Board course documents. It uses the sign-ins already held by Chrome. It does not ask for, store or type school passwords. It does not read Gmail; Better Gmail is a separate extension.</p>
 <h2>AI requests and learning classes</h2>
 <p>SillyBus’s hosted AI service sends questions and relevant context through better-gmail-api.jomonkey22.workers.dev on Cloudflare to Anthropic. Context can include assignment text, class materials, attached photos, recent messages in the conversation you resume and saved memories. Learning how to read a class’s materials can also send those materials to this service. The service stores an installation identifier, account email when signed in, first-use dates, usage costs and subscription status; it is designed not to store the submitted prompt or response content. If you provide your own Anthropic API key, direct AI requests use api.anthropic.com and that key stays in local extension storage. Anthropic handles requests under its own privacy policy: https://www.anthropic.com/legal/privacy.</p>
 <h2>Chat memory</h2>
 <p>Only preferences you explicitly ask SillyBus to remember are saved as memories. You can inspect and remove them in the Memory drawer or with chat memory commands. Recent turns from a resumed conversation and bounded saved memories may accompany an AI request. Removing a memory stops its use in later requests; it does not recall a request already transmitted.</p>
 <h2>Calendars and Link this page</h2>
-<p>After you click the toolbar icon and choose Link this page, the extension reads that tab to discover a calendar or save homework, an event, a task or a class link. Calendar access is requested for that calendar’s origin. Google Calendar uses its export with your existing Chrome sign-in and can refresh periodically while Chrome runs. TeamSnap calendar feed addresses are stored locally and sent to their calendar host. Treat calendar feed addresses as private.</p>
-<h2>Optional Mac pairing</h2>
-<p>You can explicitly pair the extension with your own local SillyBus Mac app. Pairing requests access to that local app. Linked Google Calendar exports and TeamSnap calendar feed information can then be sent from Chrome to your paired Mac and kept there. Pairing is optional; it does not send calendars to another user or to the developer.</p>
+<p>After you click the toolbar icon and choose Link this page, the extension reads that tab to discover a calendar or save homework, an event, a task or a class link. Chrome site access is required for that calendar’s origin. Google Calendar uses its export with your existing Chrome sign-in and can refresh periodically while Chrome runs. TeamSnap calendar feed addresses are stored locally and sent to their calendar host. Treat calendar feed addresses as private.</p>
+<h2>Automatic connection to the local Mac app</h2>
+<p>If the SillyBus Mac app is installed and running, the extension connects automatically through an authenticated local app page at http://127.0.0.1:5055. Chrome must allow local app access. A pairing token stays in extension storage and is never given to school websites. Explicitly linked calendar exports and school assignment metadata, including visible Google Classroom coursework, can be sent to that app and kept locally. Supported school pages requested by the local app are also sent periodically using Chrome’s existing school sign-in. These transfers stay on this computer; they do not go to another user or the developer. Required Google or SillyBus sign-in and Chrome permission approval remain user actions. Removing the extension does not remove the Mac app’s local copy.</p>
+<h2>Google Classroom coursework</h2>
+<p>After Link this page, the extension reads visible assignment metadata on Classroom pages you visit. Other classes, collapsed coursework and pages you have not opened may contain additional assignments. Original links and stated machine-readable dates are imported; ambiguous date labels remain text instead of guessed deadlines. The reader does not collect assessment questions, session tokens or grades and requires no Google API key or ChatGPT account.</p>
 <h2>Optional Focus reminders</h2>
 <p>Focus is off unless you enable it. Chrome requests access only for sites you select. On those sites the extension displays your homework reminder or a gate requiring your bypass PIN. It does not read posts, media or browsing history. The PIN is stored as a PBKDF2 hash. Turning Focus off relinquishes its permissions.</p>
 <h2>Accounts and payment</h2>
 <p>Optional SillyBus accounts use the account service to manage sign-in and subscription access. Account information includes your email and authentication records. AI usage and plan options are shown in Settings. Payments are handled by Stripe; card details go to Stripe and SillyBus does not receive your card number. Subscription status is associated with your account. Stripe privacy policy: https://stripe.com/privacy.</p>
 <h2>Permissions and other requests</h2>
-<p>storage and unlimitedStorage keep settings, database and backups locally. scripting runs bundled school readers, the user-initiated current-tab link reader and Focus reminders. activeTab grants access for your toolbar action. alarms schedules calendar refresh and synchronization. Required school hosts serve the sources above; optional site access is requested for selected Focus sites, calendars and local Mac pairing. The dashboard may request Canvas and Veracross pages periodically to check sign-in state. Google Fonts requests disclose your IP address to Google but do not carry your school data. Optional autostart opens the extension’s own dashboard.</p>
+<p>storage and unlimitedStorage keep settings, database and backups locally. scripting runs bundled school readers, the user-initiated current-tab link reader and Focus reminders. activeTab grants access for your toolbar action. alarms schedules calendar refresh and synchronization. Required school hosts serve the sources above; required host access includes Google Calendar, Google Classroom and the local Mac app; optional site access is requested for selected Focus sites and other calendar hosts. The dashboard may request Canvas and Veracross pages periodically to check sign-in state. Google Fonts requests disclose your IP address to Google but do not carry your school data. Optional autostart opens the extension’s own dashboard.</p>
 <h2>Canvas submissions</h2>
 <p>The optional Canvas upload feature ships off. If enabled, it asks for confirmation for each submission, showing the assignment and selected file. The file goes to your school’s Canvas. Failed submissions are not automatically retried.</p>
 <h2>Data use and removal</h2>
@@ -52,7 +54,7 @@
 <h2>Contact</h2>
 <p>Email info@sillybusai.com for privacy questions. Automatic account emails may come from no.response@sillybusai.com; use info@ for replies.</p>
 <footer class="site">
-  <a href="./">SillyBus AI</a> · Privacy Policy · last updated 8 October 2026
+  <a href="./">SillyBus AI</a> · Privacy Policy · last updated 9 October 2026
 </footer>
 
 </div>

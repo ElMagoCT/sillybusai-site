@@ -114,3 +114,12 @@ https://sillybusai.com/privacy.html
 - Visibility: **Public** (your decision on 2026-09-14).
 - Regions: all.
 - Pricing: free.
+
+## 0.23.7.0 added permission justifications
+
+- `http://127.0.0.1:5055/*`: automatically pairs with the installed, running SillyBus Mac app through its authenticated local page and hands supported schoolwork and linked calendars to that app on this computer. The token is not exposed to school websites.
+- `https://calendar.google.com/*`: reads Google Calendar's native export using the user's existing sign-in, after the user explicitly links the calendar, and refreshes linked calendars.
+- `https://classroom.google.com/*`: reads visible assignment metadata from Classroom pages the user explicitly links and later visits. It does not read grades, assessment questions or session tokens.
+- `scripting` additionally runs the bundled Classroom reader and the authenticated local app pairing call.
+
+Existing Chrome users may need to approve the added host access. Classroom coverage is limited to visible coursework; live assignment verification was unavailable because the test account has no enrolled classes.

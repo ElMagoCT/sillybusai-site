@@ -1,46 +1,46 @@
 {
-  "version": "0.21.6.0",
-  "released": "2026-09-22",
+  "version": "0.23.7.0",
+  "released": "2026-10-09",
   "history": [
     {
-      "version": "0.21.6.0",
-      "date": "2026-09-22",
-      "title": "School mail, and handing work in"
+      "version": "0.23.7.0",
+      "date": "2026-10-09",
+      "title": "Automatic Mac connection and explicit school imports"
     },
     {
-      "version": "0.21.5.0",
-      "date": "2026-09-22",
-      "title": "Every program, as a mark you can press"
+      "version": "0.23.3.1",
+      "date": "2026-10-08",
+      "title": "Screen-time replies without AI"
     },
     {
-      "version": "0.21.4.0",
-      "date": "2026-09-21",
-      "title": "Connecting a calendar, explained where you are standing"
+      "version": "0.23.3.0",
+      "date": "2026-10-08",
+      "title": "Previous chats and lasting memory"
     },
     {
-      "version": "0.21.3.0",
-      "date": "2026-09-21",
-      "title": "Opening it checks for a new one"
+      "version": "0.23.2.0",
+      "date": "2026-10-07",
+      "title": "Calendar toolbar links reach the Mac app"
     },
     {
-      "version": "0.21.2.0",
-      "date": "2026-09-21",
-      "title": "Put this in your own calendar"
+      "version": "0.23.1.0",
+      "date": "2026-10-07",
+      "title": "A clearer simple screen"
     },
     {
-      "version": "0.21.1.0",
-      "date": "2026-09-21",
-      "title": "A season is not a fortnight"
+      "version": "0.23.0.1",
+      "date": "2026-10-07",
+      "title": "The Mac app, hardened"
     },
     {
-      "version": "0.21.0.0",
-      "date": "2026-09-20",
-      "title": "Focus: off, a reminder, or blocked behind a PIN"
+      "version": "0.23.0.0",
+      "date": "2026-10-07",
+      "title": "Opens like a new chat"
     },
     {
-      "version": "0.20.1.0",
-      "date": "2026-09-20",
-      "title": "As many tabs as you like, and connectors that really switch off"
+      "version": "0.22.11.0",
+      "date": "2026-10-07",
+      "title": "Downtime, a chat that changes settings, two Google accounts"
     }
   ]
 }
