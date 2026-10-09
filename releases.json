@@ -1,7 +1,12 @@
 {
-  "version": "0.23.7.0",
+  "version": "0.23.7.1",
   "released": "2026-10-09",
   "history": [
+    {
+      "version": "0.23.7.1",
+      "date": "2026-10-09",
+      "title": "The public download uses the unified extension"
+    },
     {
       "version": "0.23.7.0",
       "date": "2026-10-09",
@@ -36,11 +41,6 @@
       "version": "0.23.0.0",
       "date": "2026-10-07",
       "title": "Opens like a new chat"
-    },
-    {
-      "version": "0.22.11.0",
-      "date": "2026-10-07",
-      "title": "Downtime, a chat that changes settings, two Google accounts"
     }
   ]
 }
